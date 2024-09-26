@@ -22,3 +22,15 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Ignorar package.json
+package.json
+
+# Ignorar pnpm-lock.yaml
+pnpm-lock.yaml
+
+# Ignorar configuración de Vite
+vite.config.js
+
+# Ignorar configuración de ESLint
+.eslintrc.js
