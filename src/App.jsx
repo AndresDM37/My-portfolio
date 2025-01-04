@@ -1,11 +1,17 @@
 import "./App.css";
-import { Page } from "./Page/Landing";
+import { Header } from "./Page/Header";
+import { Home } from "./Page/Home";
 
 function App() {
   return (
-    <main>
-      <Page />
-    </main>
+    <>
+      <header>
+        <Header />
+      </header>
+      <body>
+        <Home />
+      </body>
+    </>
   );
 }
 
