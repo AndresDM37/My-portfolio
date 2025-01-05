@@ -1,17 +1,12 @@
-import "./App.css";
-import { Header } from "./Page/Header";
-import { Home } from "./Page/Home";
+import Header  from "./sections/Header";
+import Hero from "./sections/Hero";
 
-function App() {
+const App = () => {
   return (
-    <>
-      <header>
-        <Header />
-      </header>
-      <body>
-        <Home />
-      </body>
-    </>
+    <main className="max-w-7xl mx-auto bg-slate-900">
+      <Header />
+      <Hero />
+    </main>
   );
 }
 
