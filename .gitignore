@@ -34,3 +34,5 @@ vite.config.js
 
 # Ignorar configuración de ESLint
 .eslintrc.js
+
+.codegpt
