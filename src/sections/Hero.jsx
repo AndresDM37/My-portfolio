@@ -6,6 +6,7 @@ import CanvasLoader from "../components/CanvasLoader";
 import { useMediaQuery } from "react-responsive";
 import { calculatedSizes } from "../utils/index";
 import Button from "../components/Button";
+import StarIcon  from "../assets/icons/star.svg";
 
 const Hero = () => {
   const isSmall = useMediaQuery({ maxWidth: 440 });
@@ -25,6 +26,10 @@ const Hero = () => {
     <div className="size-[1610px] hero-ring"></div>
     <div className="size-[1810px] hero-ring"></div>
     <div className="size-[2010px] hero-ring"></div>
+
+    <div className="absolute">
+     <StarIcon />
+    </div>
     
         <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
           <p className="sm:text-3xl text-2xl font-medium text-white text-center font-generalsans">
