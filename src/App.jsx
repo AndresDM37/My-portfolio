@@ -1,11 +1,13 @@
 import Header  from "./sections/Header";
 import Hero from "./sections/Hero";
+import Projects from "./sections/Projects";
 
 const App = () => {
   return (
-    <main className="max-w-7xl mx-auto bg-gray-900">
+    <main className="bg-gray-900">
       <Header />
       <Hero />
+      <Projects />
     </main>
   );
 }
