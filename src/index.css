@@ -13,6 +13,10 @@ body {
 }
 
 @layer utilities {
+  .container {
+    @apply lg:max-w-5xl
+  }
+
   .c-space {
     @apply sm:px-10 px-5;
   }

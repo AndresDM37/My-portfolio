@@ -1,11 +1,16 @@
 import Button from "../components/Button";
 import { StarIcon } from "../components/StarIcon";
 import emojiImage from "../assets/images/emoji.png";
+import backGround from "../assets/images/grain.jpg";
 
 const Hero = () => {
   return (
     <section className="py-32 md:py-14 relative z-0 overflow-x-clip">
       <div className="absolute inset-0 mask-gradient">
+        <div
+          className="absolute inset-0 -z-30 opacity-5"
+          style={{ backgroundImage: `url(${backGround})` }}
+        ></div>
         <div className="size-[610px] hero-ring"></div>
         <div className="size-[810px] hero-ring"></div>
         <div className="size-[1010px] hero-ring"></div>
