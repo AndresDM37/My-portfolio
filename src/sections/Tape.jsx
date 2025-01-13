@@ -1,4 +1,4 @@
-import { StarIcon } from "../components/StarIcon";
+import { StarIcon } from "../components/Icons";
 
 const words = [
   "Software Engineer",

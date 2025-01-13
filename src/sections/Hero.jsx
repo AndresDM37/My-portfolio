@@ -1,5 +1,5 @@
 import Button from "../components/Button";
-import { StarIcon } from "../components/StarIcon";
+import { StarIcon } from "../components/Icons";
 import emojiImage from "../assets/images/emoji.png";
 import backGround from "../assets/images/grain.jpg";
 
@@ -84,7 +84,7 @@ const Hero = () => {
           </p>
         </div>
         <div className="flex flex-col md:flex-row justify-center items-center gap-4 z-999">
-          <a href="#projects" className="w-fit">
+          <a href="#Projects" className="w-fit">
             <Button
               isBeam
               name="Explore My Work 🤩"
@@ -92,7 +92,7 @@ const Hero = () => {
             />
           </a>
 
-          <a href="#contact" className="w-fit">
+          <a href="#Contact" className="w-fit">
             <Button
               name="Let's word together"
               isBeam
