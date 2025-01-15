@@ -1,92 +1,11 @@
+import Emoji from "../assets/images/emoji2.png";
+import { hobbies } from "../utils";
+import { toolBoxItems } from "../utils";
+
 import SectionHeader from "../components/SectionHeader";
 import Card from "../components/Card";
 import CardHeader from "../components/CardHeader";
-import Emoji from "../assets/images/emoji2.png";
-import {
-  JavascriptIcon,
-  HTMLIcon,
-  CssIcon,
-  ReactIcon,
-  GitHubIcon,
-  NodeIcon,
-  FigmaIcon,
-  SQLIcon,
-} from "../components/Icons";
 import ToolBoxItems from "../components/ToolBoxItems";
-
-const toolBoxItems = [
-  {
-    title: "JavaScript",
-    iconType: JavascriptIcon,
-  },
-  {
-    title: "HTML5",
-    iconType: HTMLIcon,
-  },
-  {
-    title: "CSS3",
-    iconType: CssIcon,
-  },
-  {
-    title: "GitHub",
-    iconType: GitHubIcon,
-  },
-  {
-    title: "React",
-    iconType: ReactIcon,
-  },
-  {
-    title: "Node.js",
-    iconType: NodeIcon,
-  },
-  {
-    title: "Figma",
-    iconType: FigmaIcon,
-  },
-  {
-    title: "MySql",
-    iconType: SQLIcon,
-  },
-];
-
-const hobbies = [
-  {
-    title: "Music",
-    emoji: "🎵",
-    left: "5%",
-    top: "5%",
-  },
-  {
-    title: "Fitness",
-    emoji: "🏋️",
-    left: "50%",
-    top: "5%",
-  },
-  {
-    title: "Magic",
-    emoji: "🎩",
-    left: "10%",
-    top: "35%",
-  },
-  {
-    title: "Ping Pong",
-    emoji: "🏓",
-    left: "35%",
-    top: "40%",
-  },
-  {
-    title: "Gaming",
-    emoji: "🎮",
-    left: "70%",
-    top: "45%",
-  },
-  {
-    title: "Traveling",
-    emoji: "✈️",
-    left: "5%",
-    top: "65%",
-  },
-];
 
 const About = () => {
   return (
@@ -153,6 +72,13 @@ const About = () => {
               ))}
             </div>
           </Card>
+          <a
+            href="/documents/HV/Ingeniero de Software - FrontEnd Developer.pdf"
+            download="/Ingeniero de Software - FrontEnd Developer.pdf"
+            className="px-4 py-2 outline outline-2 outline-white/20 bg-gray-800 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity md:w-1/4 mx-auto text-center"
+          >
+            Download My Resume
+          </a>
         </div>
       </div>
     </section>

@@ -1,5 +1,7 @@
 import Button from "../components/Button";
+
 import { StarIcon } from "../components/Icons";
+
 import emojiImage from "../assets/images/emoji.png";
 import backGround from "../assets/images/grain.jpg";
 
