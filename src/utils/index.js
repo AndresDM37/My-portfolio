@@ -1,9 +1,9 @@
 import ReacIcon from "../assets/icons/react.svg";
 import CSSIcon from "../assets/icons/css.svg";
-import JSIcon  from "../assets/icons/js.svg";
+import JSIcon from "../assets/icons/js.svg";
 import TailwindCSSIcon from "../assets/icons/tailwindcss.svg";
 import TypeScriptIcon from "../assets/icons/typescript.svg";
-import HtmlIcon from "../assets/icons/html.svg";  
+import HtmlIcon from "../assets/icons/html.svg";
 import MySQLIcon from "../assets/icons/mysql.svg";
 import NodeJSIcon from "../assets/icons/node.svg";
 
@@ -16,8 +16,18 @@ import {
   NodeIcon,
   FigmaIcon,
   SQLIcon,
-  JiraIcon
-} from "../components/Icons"
+  JiraIcon,
+  PlatziIcon,
+  UMBIcon,
+} from "../components/Icons";
+
+import image from "../assets/images/certifications/image.png";
+import image2 from "../assets/images/certifications/image2.png";
+import image3 from "../assets/images/certifications/image3.png";
+import image4 from "../assets/images/certifications/image4.png";
+import image5 from "../assets/images/certifications/image5.png";
+import image6 from "../assets/images/certifications/image6.png";
+import image7 from "../assets/images/certifications/image7.png";
 
 export const toolBoxItems = [
   {
@@ -105,6 +115,31 @@ export const hobbies = [
 
 export const myProjects = [
   {
+    title: "E-commerce",
+    position: "Frontend Developer",
+    date: "Nov 2024",
+    desc: "Development of an interactive shopping cart using React, featuring dynamically fetched products from an API to ensure an always up-to-date catalog, allowing users to add, remove, and manage product quantities in the cart, with best practices implemented for state management and API interaction to enhance efficiency and user experience",
+    href: "https://shopping-cart-with-react-andev.netlify.app",
+    texture: "",
+    tags: [
+      {
+        id: 1,
+        name: "React.js",
+        path: ReacIcon,
+      },
+      {
+        id: 2,
+        name: "CSS",
+        path: CSSIcon,
+      },
+      {
+        id: 3,
+        name: "JavaScript",
+        path: JSIcon,
+      },
+    ],
+  },
+  {
     title: "JavaScript Quiz",
     position: "Frontend Developer",
     date: "Oct 2024",
@@ -127,36 +162,6 @@ export const myProjects = [
         name: "TypeScript",
         path: TypeScriptIcon,
       },
-      {
-        id: 4,
-        name: "JavaScript",
-        path: JSIcon,
-      }
-    ],
-  },
-  {
-    title: "E-commerce",
-    position: "Frontend Developer",
-    date: "Jun 2024",
-    desc: "Development of an interactive shopping cart using React, featuring dynamically fetched products from an API to ensure an always up-to-date catalog, allowing users to add, remove, and manage product quantities in the cart, with best practices implemented for state management and API interaction to enhance efficiency and user experience",
-    href: "https://shopping-cart-with-react-andev.netlify.app",
-    texture: "",
-    tags: [
-      {
-        id: 1,
-        name: "React.js",
-        path: ReacIcon,
-      },
-      {
-        id: 2,
-        name: "CSS",
-        path: CSSIcon,
-      },
-      {
-        id: 3,
-        name: "JavaScript",
-        path: JSIcon,
-      }
     ],
   },
   {
@@ -166,14 +171,12 @@ export const myProjects = [
     desc: "adadadasddddddddddddddd",
     href: "#",
     texture: "",
-    tags: [
-      
-    ],
+    tags: [],
   },
   {
     title: "Paint Window",
     position: "Frontend Developer",
-    date: "Jun 2024",
+    date: "Sept 2024",
     desc: "Development of an interactive drawing application using Vanilla JavaScript, HTML, and CSS, featuring tools like brush, eraser, rectangles, and ellipses, a color picker integrated with the EyeDropper API, an intuitive interface with interactive buttons, text animation effects, and precise drawing controls via mouse events",
     href: "https://paint-window-andev.netlify.app",
     texture: "/textures/project/project1.mp4",
@@ -187,7 +190,7 @@ export const myProjects = [
         id: 2,
         name: "JavaScript",
         path: JSIcon,
-      }
+      },
     ],
   },
   {
@@ -205,7 +208,7 @@ export const myProjects = [
       },
       {
         id: 2,
-        name: "CSS",  
+        name: "CSS",
         path: CSSIcon,
       },
       {
@@ -222,7 +225,7 @@ export const myProjects = [
         id: 5,
         name: "MySQL",
         path: MySQLIcon,
-      }
+      },
     ],
   },
   {
@@ -247,9 +250,68 @@ export const myProjects = [
         id: 3,
         name: "JavaScript",
         path: JSIcon,
-      }
+      },
     ],
   },
 ];
 
-
+export const studyItems = [
+  {
+    title: "Software Engineering",
+    icon: UMBIcon,
+    dateFinish: "Feb 2021",
+    schoolar: "Universidad Manuela Beltran",
+    image: image,
+    state: true,
+  },
+  {
+    title: "Switching, Routing and Wireless Essentials",
+    icon: "",
+    schoolar: "",
+    dateFinish: "Jun 2023",
+    image: image,
+    state: false,
+  },
+  {
+    title: "Linux Essentials",
+    icon: "",
+    dateFinish: "Sept 2023",
+    image: image2,
+    state: false,
+  },
+  {
+    title: "Scrum Fundamentals Certified",
+    icon: "",
+    dateFinish: "Sept 2023",
+    image: image7,
+    state: false,
+  },
+  {
+    title: "FrontEnd Developer",
+    icon: PlatziIcon,
+    dateFinish: "Mar 2024",
+    image: image4,
+    state: false,
+  },
+  {
+    title: "Business Intelligence Foundation",
+    icon: "",
+    dateFinish: "Oct 2024",
+    image: image3,
+    state: false,
+  },
+  {
+    title: "FullStack Developer with JavaScript",
+    icon: PlatziIcon,
+    dateFinish: "Oct 2024",
+    image: image5,
+    state: false,
+  },
+  {
+    title: "React Avanzado",
+    icon: PlatziIcon,
+    dateFinish: "Nov 2024",
+    image: image6,
+    state: false,
+  },
+];

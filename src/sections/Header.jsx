@@ -11,10 +11,13 @@ const Header = () => {
         <a href="#Projects" className="nav-item">
           Projects
         </a>
-        <a href="#Experience" className="nav-item">
-          Experience
+        <a href="#Study" className="nav-item">
+          Study
         </a>
-        <a href="#Contact" className="nav-item bg-white !text-gray-900 hover:bg-white/70 hover:text-gray-900">
+        <a
+          href="#Contact"
+          className="nav-item bg-white !text-gray-900 hover:bg-white/70 hover:text-gray-900"
+        >
           Contact
         </a>
       </nav>

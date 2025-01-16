@@ -1,6 +1,8 @@
 import { TechIcon } from "./TechIcon";
 import { twMerge } from "tailwind-merge";
 
+import Card from "../components/Card";
+
 const ToolBoxItems = ({ items, className, itemsWrapper }) => {
   return (
     <>
@@ -10,7 +12,9 @@ const ToolBoxItems = ({ items, className, itemsWrapper }) => {
           className
         )}
       >
-        <div className={twMerge("flex flex-none py-0.5 gap-6 pr-6", itemsWrapper)}>
+        <div
+          className={twMerge("flex flex-none py-0.5 gap-6 pr-6", itemsWrapper)}
+        >
           {items.map((item) => (
             <div
               key={item.title}

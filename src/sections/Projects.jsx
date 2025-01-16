@@ -29,7 +29,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="Projects" className="mt-20 flex flex-col gap-8">
+    <section id="Projects" className="py-20 gap-8">
       <SectionHeader
         eyebrow={"Projects"}
         title={"Building the Future"}
@@ -94,7 +94,7 @@ const Projects = () => {
                     position={[0, -3.3, 0]}
                     rotation={[0, -0.1, 0]}
                   >
-                    <DemoComputer texture={currentProjects.texture}/>
+                    <DemoComputer texture={currentProjects.texture} />
                   </group>
                 </Suspense>
               </Center>
