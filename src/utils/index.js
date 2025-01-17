@@ -19,11 +19,14 @@ import {
   JiraIcon,
   PlatziIcon,
   UMBIcon,
+  CiscoIcon,
+  NDGIcon,
+  ScrumIcon,
+  
 } from "../components/Icons";
 
 import image from "../assets/images/certifications/image.png";
 import image2 from "../assets/images/certifications/image2.png";
-import image3 from "../assets/images/certifications/image3.png";
 import image4 from "../assets/images/certifications/image4.png";
 import image5 from "../assets/images/certifications/image5.png";
 import image6 from "../assets/images/certifications/image6.png";
@@ -266,23 +269,25 @@ export const studyItems = [
   },
   {
     title: "Switching, Routing and Wireless Essentials",
-    icon: "",
-    schoolar: "",
+    icon: CiscoIcon,
     dateFinish: "Jun 2023",
+    schoolar: "Cisco",
     image: image,
     state: false,
   },
   {
     title: "Linux Essentials",
-    icon: "",
+    icon: NDGIcon,
     dateFinish: "Sept 2023",
+    schoolar: "NDG",
     image: image2,
     state: false,
   },
   {
     title: "Scrum Fundamentals Certified",
-    icon: "",
+    icon: ScrumIcon,
     dateFinish: "Sept 2023",
+    schoolar: "Scrum Study",
     image: image7,
     state: false,
   },
@@ -290,20 +295,15 @@ export const studyItems = [
     title: "FrontEnd Developer",
     icon: PlatziIcon,
     dateFinish: "Mar 2024",
+    schoolar: "Platzi",
     image: image4,
     state: false,
   },
   {
-    title: "Business Intelligence Foundation",
-    icon: "",
-    dateFinish: "Oct 2024",
-    image: image3,
-    state: false,
-  },
-  {
-    title: "FullStack Developer with JavaScript",
+    title: "Full Stack Developer with JavaScript",
     icon: PlatziIcon,
     dateFinish: "Oct 2024",
+    schoolar: "Platzi",
     image: image5,
     state: false,
   },
@@ -311,6 +311,7 @@ export const studyItems = [
     title: "React Avanzado",
     icon: PlatziIcon,
     dateFinish: "Nov 2024",
+    schoolar: "Platzi",
     image: image6,
     state: false,
   },

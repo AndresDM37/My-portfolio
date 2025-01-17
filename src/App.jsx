@@ -4,6 +4,7 @@ import About from "./sections/About";
 import Tape from "./sections/Tape";
 import Projects from "./sections/Projects";
 import Study from "./sections/Study";
+import Contact from "./sections/Contact";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Tape />
       <Projects />
       <Study />
+      <Contact />
     </main>
   );
 }
