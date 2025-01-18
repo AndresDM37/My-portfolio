@@ -10,7 +10,7 @@ const Hero = () => {
     <section className="py-32 md:py-14 relative z-0 overflow-x-clip">
       <div className="absolute inset-0 mask-gradient">
         <div
-          className="absolute inset-0 -z-30 opacity-5"
+          className="absolute inset-0 z-30 opacity-5"
           style={{ backgroundImage: `url(${backGround})` }}
         ></div>
         <div className="size-[610px] hero-ring"></div>
@@ -96,7 +96,7 @@ const Hero = () => {
 
           <a href="#Contact" className="w-fit">
             <Button
-              name="Let's word together"
+              name="Let's work together"
               isBeam
               containerClass="sm:w-fit w-full sm:min-w-96"
             />

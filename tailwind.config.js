@@ -6,6 +6,10 @@ export default {
       fontFamily: {
         generalsans: ["General Sans", "sans-serif"],
       },
+      animation: {
+        "move-left": "move-left 1s linear infinite",
+        "move-right": "move-right 1s linear infinite",
+      },
       colors: {
         black: {
           DEFAULT: "#000",
@@ -23,8 +27,15 @@ export default {
           500: "#62646C",
         },
       },
-      backgroundImage: {
-        terminal: "url('/assets/terminal.png')",
+      keyframes: {
+        "move-left": {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        "move-right": {
+          "0%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(0%)" },
+        },
       },
     },
   },

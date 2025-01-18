@@ -7,6 +7,7 @@ import Card from "../components/Card";
 import CardHeader from "../components/CardHeader";
 import ToolBoxItems from "../components/ToolBoxItems";
 
+
 const About = () => {
   return (
     <section id="About" className="py-20 lg:py-28 lg:mt-1">
@@ -41,11 +42,14 @@ const About = () => {
                 }
                 className={"px-6 pt-6"}
               />
-              <ToolBoxItems items={toolBoxItems} />
+              <ToolBoxItems
+                items={toolBoxItems}
+                itemsWrapper="animate-move-left [animation-duration:30s]"
+              />
               <ToolBoxItems
                 items={toolBoxItems}
                 className={"mt-6"}
-                itemsWrapper={"-translate-x-1/2"}
+                itemsWrapper="animate-move-right [animation-duration:20s]"
               />
             </Card>
           </div>

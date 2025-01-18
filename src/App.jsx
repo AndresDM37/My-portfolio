@@ -5,6 +5,7 @@ import Tape from "./sections/Tape";
 import Projects from "./sections/Projects";
 import Study from "./sections/Study";
 import Contact from "./sections/Contact";
+import Footer from "./sections/Footer";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <Projects />
       <Study />
       <Contact />
+      <Footer />
     </main>
   );
 }
