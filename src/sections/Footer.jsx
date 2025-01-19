@@ -4,15 +4,15 @@ import arrowUpIcon from "../assets/icons/arrow-up-right.svg";
 const footerLinks = [
     {
         title: 'WhatsApp',
-        href: '#',
+        href: 'https://w.app/V6dlbn',
     },
     {
         title: 'GitHub',
-        href: '#',
+        href: 'https://github.com/AndresDM37',
     },
     {
         title: 'LinkedIn',
-        href: '#',
+        href: 'https://www.linkedin.com/in/andevmarchena/',
     },
 ]
 
@@ -25,7 +25,7 @@ const Footer = () => {
                     <div className="text-white/40">&copy; 2025. All rights reserved</div>
                     <nav className="flex flex-col md:flex-row items-center gap-8">
                         {footerLinks.map(link => (
-                            <a href="#" key={link.title} className="inline-flex items-center gap-1.5">
+                            <a href={link.href} key={link.title} className="inline-flex items-center gap-1.5 z-40" target="_blank" rel="noreferrer">
                                 <span className="font-semibold text-white">{link.title}</span>
                                 <img src={arrowUpIcon} alt="ArrowIcon" className="size-4"/>
                             </a>
