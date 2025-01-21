@@ -2,15 +2,15 @@ import { Fragment } from "react";
 import { StarIcon } from "../components/Icons";
 
 const words = [
-  "Software Engineer",
-  "Web Developer",
-  "Problem Solver",
-  "User Friendly",
-  "Fast Learner",
-  "Adaptable Environment",
-  "Creative Developer",
-  "Team Player",
-  "Secure",
+  "Ingeniero de Software",
+  "Desarrollador Web",
+  "Solucionador de problemas",
+  "Amigable",
+  "Aprendizaje rápido",
+  "Adaptable al Entorno",
+  "Desarrollador creativo",
+  "Trabajador en equipo",
+  "Seguro",
 ];
 
 const Tape = () => {

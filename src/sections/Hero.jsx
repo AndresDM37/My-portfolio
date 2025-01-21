@@ -79,24 +79,24 @@ const Hero = () => {
             className="size-[200px]"
           />
           <p className="font-generalsans text-3xl text-center mt-8 tracking-wide text-white">
-            Hi, I am Andrés <span className="waving-hand">👋</span>
+            Hola, Me llamo Andrés <span className="waving-hand">👋</span>
           </p>
           <p className="hero_tag text-white/60">
-            JR FrontEnd Developer - Full Stack in Progress
+            JR FrontEnd Developer - Full Stack en Progreso
           </p>
         </div>
         <div className="flex flex-col md:flex-row justify-center items-center gap-4 z-999">
           <a href="#Projects" className="w-fit">
             <Button
               isBeam
-              name="Explore My Work 🤩"
+              name="Explora mi trabajo 🤩"
               containerClass="sm:w-fit w-full sm:min-w-96"
             />
           </a>
 
           <a href="#Contact" className="w-fit">
             <Button
-              name="Let's work together"
+              name="Vamos a trabajar juntos"
               isBeam
               containerClass="sm:w-fit w-full sm:min-w-96"
             />

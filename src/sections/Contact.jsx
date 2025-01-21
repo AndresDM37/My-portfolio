@@ -57,10 +57,9 @@ const Contact = () => {
     <section id="Contact" className="py-16 pt-12 lg:py-24 lg:pt-20">
       <div className="container mx-auto">
         <div className="bg-gradient-to-r from-emerald-300 to-sky-400 text-gray-800 py-8 px-10 rounded-3xl">
-          <h2 className="head-text">Let’s talk</h2>
+          <h2 className="head-text">!Vamos a Hablar¡</h2>
           <p className="text-lg mt-4">
-            Whether you’re looking to build a new website or bring a unique
-            project to life, Let’s connect and discuss how we can work together.
+          Si desea crear un nuevo sitio web o dar vida a un proyecto único, póngase en contacto conmigo y hablemos de cómo podemos trabajar juntos.
           </p>
 
           <form
@@ -69,7 +68,7 @@ const Contact = () => {
             className="mt-12 flex flex-col space-y-7"
           >
             <label className="space-y-3">
-              <span className="text-lg">Full Name</span>
+              <span className="text-lg">Nombre Completo</span>
               <input
                 type="text"
                 name="name"
@@ -81,7 +80,7 @@ const Contact = () => {
               />
             </label>
             <label className="space-y-3">
-              <span className="text-lg">Email</span>
+              <span className="text-lg">Correo Electronico</span>
               <input
                 type="email"
                 name="email"
@@ -89,23 +88,23 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 className="field-input"
-                placeholder="example@gmail.com"
+                placeholder="ejemplo@gmail.com"
               />
             </label>
             <label className="space-y-3">
-              <span className="text-lg">Your Message</span>
+              <span className="text-lg">Su Mensaje</span>
               <textarea
                 name="message"
                 value={form.message}
                 onChange={handleChange}
                 rows={5}
                 className="field-input"
-                placeholder="Hi, I would like to discuss..."
+                placeholder="Hola, me gustaria que ..."
               />
             </label>
 
             <button className="field-btn z-50" type="submit" disabled={loading}>
-              {loading ? "Sending Message..." : "Contact Me"}
+              {loading ? "Enviando Mensaje..." : "Enviar Mensaje"}
 
               <img src={arrowUpIcon} alt="Arrow" />
             </button>

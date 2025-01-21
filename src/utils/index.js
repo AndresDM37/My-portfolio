@@ -22,7 +22,6 @@ import {
   CiscoIcon,
   NDGIcon,
   ScrumIcon,
-  
 } from "../components/Icons";
 
 import image from "../assets/images/certifications/image.png";
@@ -73,7 +72,7 @@ export const toolBoxItems = [
 
 export const hobbies = [
   {
-    title: "Music",
+    title: "Musica",
     emoji: "🎵",
     left: "5%",
     top: "5%",
@@ -85,7 +84,7 @@ export const hobbies = [
     top: "5%",
   },
   {
-    title: "Magic",
+    title: "Magia",
     emoji: "🎩",
     left: "10%",
     top: "35%",
@@ -97,13 +96,13 @@ export const hobbies = [
     top: "40%",
   },
   {
-    title: "Gaming",
+    title: "VideoJuegos",
     emoji: "🎮",
     left: "70%",
     top: "35%",
   },
   {
-    title: "Traveling",
+    title: "Viajar",
     emoji: "✈️",
     left: "15%",
     top: "65%",
@@ -115,7 +114,7 @@ export const hobbies = [
     top: "70%",
   },
   {
-    title: "Movies",
+    title: "Peliculas",
     emoji: "🎥",
     left: "78%",
     top: "65%",
@@ -127,9 +126,10 @@ export const myProjects = [
     title: "E-commerce",
     position: "Frontend Developer",
     date: "Nov 2024",
-    desc: "Development of an interactive shopping cart using React, featuring dynamically fetched products from an API to ensure an always up-to-date catalog, allowing users to add, remove, and manage product quantities in the cart, with best practices implemented for state management and API interaction to enhance efficiency and user experience",
+    desc: "Desarrollo de un carrito de la compra interactivo utilizando React, con productos obtenidos dinámicamente de una API para garantizar un catálogo siempre actualizado, permitiendo a los usuarios añadir, eliminar y gestionar las cantidades de productos en el carrito, con las mejores prácticas implementadas para la gestión del estado y la interacción API para mejorar la eficiencia y la experiencia del usuario.",
     href: "https://shopping-cart-with-react-andev.netlify.app",
-    texture: "",
+    texture: "/textures/project/project1.mp4",
+    isInProgress: false,
     tags: [
       {
         id: 1,
@@ -152,9 +152,10 @@ export const myProjects = [
     title: "JavaScript Quiz",
     position: "Frontend Developer",
     date: "Oct 2024",
-    desc: "Development of an interactive JavaScript quiz using React and TypeScript, featuring questions on various JavaScript concepts, real-time feedback for user responses, robust type handling with TypeScript, and an intuitive interface designed to enhance the user experience and promote dynamic learning",
-    href: "#",
+    desc: "Desarrollo de un quiz interactivo sobre JavaScript, utilizando React y TypeScript. La aplicación presenta preguntas sobre distintos conceptos de JavaScript, permitiendo a los usuarios responder y recibir retroalimentación en tiempo real.",
+    href: "https://quiz-of-javascript.netlify.app",
     texture: "/textures/project/project2.mp4",
+    isInProgress: false,
     tags: [
       {
         id: 1,
@@ -177,23 +178,41 @@ export const myProjects = [
     title: "Clon MonkeyType",
     position: "Frontend Developer",
     date: "Jun 2024",
-    desc: "adadadasddddddddddddddd",
-    href: "#",
-    texture: "",
-    tags: [],
-  },
-  {
-    title: "Paint Window",
-    position: "Frontend Developer",
-    date: "Sept 2024",
-    desc: "Development of an interactive drawing application using Vanilla JavaScript, HTML, and CSS, featuring tools like brush, eraser, rectangles, and ellipses, a color picker integrated with the EyeDropper API, an intuitive interface with interactive buttons, text animation effects, and precise drawing controls via mouse events",
-    href: "https://paint-window-andev.netlify.app",
-    texture: "/textures/project/project1.mp4",
+    desc: "Desarrollo de un juego interactivo de mecanografía que desafía la velocidad y precisión al escribir, diseñado con JavaScript Vanilla. Presenta generación dinámica de palabras, estadísticas detalladas de desempeño (WPM y precisión), cambio de idioma en tiempo real y opciones de personalización del tiempo de juego.",
+    href: "https://monkeytypeclon.netlify.app",
+    texture: "/textures/project/project3.mp4",
+    isInProgress: false,
     tags: [
       {
         id: 1,
         name: "CSS",
         path: CSSIcon,
+      },
+      {
+        id: 2,
+        name: "HTML",
+        path: HtmlIcon,
+      },
+      {
+        id: 3,
+        name: "JavaScript",
+        path: JSIcon,
+      },
+    ],
+  },
+  {
+    title: "Paint Window",
+    position: "Frontend Developer",
+    date: "Sept 2024",
+    desc: "Aplicación de dibujo interactiva con herramientas como pincel, borrador, rectángulos y elipses. Incluye selector de color compatible con la API de EyeDropper para elegir colores del lienzo (en navegadores modernos). Ofrece una interfaz intuitiva con botones interactivos para cambiar modos y limpiar el lienzo, animaciones para el texto en pantalla, y manejo preciso del dibujo mediante eventos del ratón.",
+    href: "https://paint-window-andev.netlify.app",
+    texture: "/textures/project/project4.mp4",
+    isInProgress: false,
+    tags: [
+      {
+        id: 1,
+        name: "HTML",
+        path: HtmlIcon,
       },
       {
         id: 2,
@@ -207,8 +226,9 @@ export const myProjects = [
     position: "Frontend Developer",
     date: "Oct 2024",
     desc: "Development of a real-time chat application using MySQL as the database, Node.js for server logic, and HTML/CSS for the front-end, featuring instant communication through a clean and functional interface, real-time message updates, and a focus on simplicity, performance, and system scalability",
-    href: "#",
-    texture: "",
+    href: "",
+    texture: "/textures/project/en-progreso.mp4",
+    isInProgress: true,
     tags: [
       {
         id: 1,
@@ -243,7 +263,8 @@ export const myProjects = [
     date: "Jan 2025",
     desc: "Creation of a personal portfolio to showcase my life, projects, and academic background, designed to provide an engaging and comprehensive overview of my work, skills, and experiences",
     href: "#",
-    texture: "",
+    texture: "/textures/project/project6.mp4",
+    isInProgress: false,
     tags: [
       {
         id: 1,
@@ -314,7 +335,7 @@ export const studyItems = [
     state: false,
   },
   {
-    title: "Software Engineering",
+    title: "Ingenieria de Software",
     icon: UMBIcon,
     dateFinish: "Feb 2021",
     schoolar: "Universidad Manuela Beltran",

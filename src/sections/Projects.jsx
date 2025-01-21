@@ -31,10 +31,10 @@ const Projects = () => {
   return (
     <section id="Projects" className="py-20 gap-8">
       <SectionHeader
-        eyebrow={"Projects"}
-        title={"Building the Future"}
+        eyebrow={"Proyectos"}
+        title={"Construir el futuro"}
         description={
-          "Explore the projects that showcase my skills, creativity, and passion for solving real-world problems. Each one is a step forward in my journey as a developer."
+          "Explora los proyectos que muestran mis habilidades, creatividad y pasión por resolver problemas del mundo real. Cada uno de ellos es un paso adelante en mi camino como desarrollador."
         }
       />
       <div className="container mx-auto">
@@ -47,7 +47,13 @@ const Projects = () => {
               <h3 className="font-serif font-semibold text-3xl text-white">
                 {currentProjects.title}
               </h3>
-              <p className="text-white/60 text-sm">{currentProjects.desc}</p>
+              {currentProjects.isInProgress ? (
+                <p className="text-white/60 text-xl font-bold">
+                  Proyecto en desarrollo. ¡Muy pronto estará disponible!
+                </p>
+              ) : (
+                <p className="text-white/60 text-sm">{currentProjects.desc}</p>
+              )}
             </div>
             <div className="flex items-center justify-between flex-wrap ml-6">
               <div className="flex items-center gap-3">
@@ -90,8 +96,8 @@ const Projects = () => {
               <Center>
                 <Suspense fallback={<CanvasLoader />}>
                   <group
-                    scale={2}
-                    position={[0, -3.3, 0]}
+                    scale={1.85}
+                    position={[-0.3, -3.3, 0]}
                     rotation={[0, -0.1, 0]}
                   >
                     <DemoComputer texture={currentProjects.texture} />

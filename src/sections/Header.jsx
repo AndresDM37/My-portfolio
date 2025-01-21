@@ -3,22 +3,22 @@ const Header = () => {
     <div className="flex justify-center items-center fixed top-3 w-full z-50 ">
       <nav className="flex gap-1 p-0.5 border border-white/15 rounded-full bg-white/10 backdrop-blur">
         <a href="#" className="nav-item">
-          Home
+          Inicio
         </a>
         <a href="#About" className="nav-item">
-          About
+          Acerca de Mi
         </a>
         <a href="#Projects" className="nav-item">
-          Projects
+          Proyectos
         </a>
         <a href="#Study" className="nav-item">
-          Study
+          Estudios
         </a>
         <a
           href="#Contact"
           className="nav-item bg-white !text-gray-900 hover:bg-white/70 hover:text-gray-900"
         >
-          Contact
+          Contacto
         </a>
       </nav>
     </div>

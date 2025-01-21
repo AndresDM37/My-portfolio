@@ -19,19 +19,19 @@ const About = () => {
     <section id="About" className="py-20 lg:py-28 lg:mt-1">
       <div className="container mx-auto">
         <SectionHeader
-          eyebrow={"About Me"}
-          title={"Behind the Code"}
+          eyebrow={"Acerca de mí"}
+          title={"Detrás del código"}
           description={
-            "If you want to know more about my skills, who I am, what I do, and what inspires me, this is the perfect place to start."
+            "Si quiere saber más sobre mis habilidades, quién soy, qué hago y qué me inspira, éste es el lugar perfecto para empezar."
           }
         />
         <div className="mt-20 flex flex-col gap-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-5">
             <Card className={"text-white md:col-span-2"}>
               <CardHeader
-                title={"Who Am I?"}
+                title={"¿Quién soy?"}
                 description={
-                  "Hi, I'm Andrés Felipe Marchena Porras, a passionate software engineer specializing in React and full-stack development. I thrive on solving complex problems, crafting innovative solutions, and turning ideas into reality through code. Let’s build something amazing together!"
+                  "Hola, soy Andrés Felipe Marchena Porras, un apasionado ingeniero de software especializado en React y desarrollo full-stack. Me encanta resolver problemas complejos, crear soluciones innovadoras y convertir ideas en realidad a través del código. ¡Construyamos algo increíble juntos!"
                 }
               />
               <img
@@ -42,9 +42,9 @@ const About = () => {
             </Card>
             <Card className={"text-white h-[320px] p-0 md:col-span-3"}>
               <CardHeader
-                title={"My Toolbox"}
+                title={"Mi caja de herramientas"}
                 description={
-                  "A curated set of tools and technologies I use to bring ideas to life, from front-end frameworks to back-end solutions."
+                  "Un conjunto de herramientas y tecnologías que uso para dar vida a las ideas, desde frameworks front-end a soluciones back-end."
                 }
                 className={"px-6 pt-6"}
               />
@@ -61,9 +61,9 @@ const About = () => {
           </div>
           <Card className={"text-white h-[320px] p-0 flex flex-col"}>
             <CardHeader
-              title={"Life Outside the Screen"}
+              title={"La vida fuera de la pantalla"}
               description={
-                "There’s more to me than just coding! Here, you’ll find a glimpse of my hobbies, passions, and what keeps me inspired outside of the digital world. "
+                "Soy mucho más que un programador. Aquí encontrarás un vistazo a mis aficiones, pasiones y lo que me mantiene inspirado fuera del mundo digital. "
               }
               className={"px-6 py-6"}
             />
@@ -89,7 +89,7 @@ const About = () => {
             download="/Ingeniero de Software - FrontEnd Developer.pdf"
             className="px-4 py-2 outline outline-2 outline-white/20 bg-gray-800 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity md:w-1/4 mx-auto text-center"
           >
-            Download My Resume
+            Descarga mi Hoja de Vida
           </a>
         </div>
       </div>

@@ -8,6 +8,8 @@ import { useState } from "react";
 import arrowLeftIcon from "../assets/icons/arrow-left.svg";
 import arrowRightIcon from "../assets/icons/arrow-right.svg";
 
+import tuercaIcon from "../assets/icons/tuerca.svg";
+
 const studyCount = studyItems.length;
 
 const Study = () => {
@@ -27,10 +29,10 @@ const Study = () => {
   return (
     <section id="Study" className="py-20">
       <SectionHeader
-        eyebrow={"Study"}
-        title={"Learning & Growing"}
+        eyebrow={"Estudios"}
+        title={"Aprender y crecer"}
         description={
-          "Discover my academic journey and certifications that have shaped my skills and fueled my passion for technology. Each milestone represents a commitment to growth and excellence."
+          "Descubra mi trayectoria académica y las certificaciones que han dado forma a mis habilidades y alimentado mi pasión por la tecnología. Cada hito representa un compromiso con el crecimiento y la excelencia."
         }
       />
       <div className="container mx-auto">
@@ -52,8 +54,8 @@ const Study = () => {
             <hr className="border-t-2 border-white/15" />
             {currentStudy.state ? (
               <div className="flex flex-col items-center justify-center h-[412px] lg:h-[512px] outline outline-2 text-white outline-white/40 font-semibold rounded-lg">
-                <img src="" alt="rueda cargando" />
-                <p className="text-4xl">Study in Progress... 💻</p> 
+                <img src={tuercaIcon} alt="rueda cargando" className="size-44 mb-4"/>
+                <p className="text-4xl">Estudio en Progreso 💻</p> 
                 {/* hacer que los 3 puntos se muevan */}
               </div>
             ) : (
