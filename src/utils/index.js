@@ -261,9 +261,9 @@ export const myProjects = [
     title: "Portfolio",
     position: "FullStack Developer",
     date: "Jan 2025",
-    desc: "Creation of a personal portfolio to showcase my life, projects, and academic background, designed to provide an engaging and comprehensive overview of my work, skills, and experiences",
+    desc: "Desarrollo de un portafolio personal que muestra mi vida, proyectos y formación académica, con un diseño atractivo que resalta mis habilidades, experiencias y logros de manera organizada y visualmente atractiva.",
     href: "#",
-    texture: "/textures/project/en-progreso.mp4",
+    texture: "/textures/project/project6.mp4",
     isInProgress: false,
     tags: [
       {
