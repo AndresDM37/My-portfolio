@@ -263,7 +263,7 @@ export const myProjects = [
     date: "Jan 2025",
     desc: "Creation of a personal portfolio to showcase my life, projects, and academic background, designed to provide an engaging and comprehensive overview of my work, skills, and experiences",
     href: "#",
-    texture: "/textures/project/project6.mp4",
+    texture: "/textures/project/en-progreso.mp4",
     isInProgress: false,
     tags: [
       {
