@@ -40,7 +40,7 @@ const Hero = () => {
       <div className="absolute size-[25px] opacity-50 top-10 left-[750px]">
         <StarIcon />
       </div>
-      <div className="absolute size-[60px] top-80 left-36">
+      <div className="absolute size-[60px] top-80 left-16">
         <StarIcon />
       </div>
       <div className="absolute size-[40px] top-40 left-[800px]">
