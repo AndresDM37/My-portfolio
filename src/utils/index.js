@@ -30,6 +30,7 @@ import image4 from "../assets/images/certifications/image4.png";
 import image5 from "../assets/images/certifications/image5.png";
 import image6 from "../assets/images/certifications/image6.png";
 import image7 from "../assets/images/certifications/image7.png";
+import image8 from "../assets/images/certifications/image8.png";
 
 export const toolBoxItems = [
   {
@@ -308,6 +309,14 @@ export const studyItems = [
     dateFinish: "Nov 2024",
     schoolar: "Platzi",
     image: image6,
+    state: false,
+  },
+  {
+    title: "Git y Github",
+    icon: PlatziIcon,
+    dateFinish: "Ene 2025",
+    schoolar: "Platzi",
+    image: image8,
     state: false,
   },
   {
