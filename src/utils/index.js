@@ -80,13 +80,13 @@ export const hobbies = [
   {
     title: "Fitness",
     emoji: "🏋️",
-    left: "50%",
-    top: "5%",
+    left: "40%",
+    top: "2%",
   },
   {
     title: "Magia",
     emoji: "🎩",
-    left: "10%",
+    left: "3%",
     top: "35%",
   },
   {
@@ -98,26 +98,26 @@ export const hobbies = [
   {
     title: "VideoJuegos",
     emoji: "🎮",
-    left: "70%",
-    top: "35%",
+    left: "72%",
+    top: "21%",
   },
   {
     title: "Viajar",
     emoji: "✈️",
-    left: "15%",
+    left: "8%",
     top: "65%",
   },
   {
     title: "BeatBox",
     emoji: "🎤",
-    left: "50%",
+    left: "38%",
     top: "70%",
   },
   {
     title: "Peliculas",
     emoji: "🎥",
-    left: "78%",
-    top: "65%",
+    left: "65%",
+    top: "55%",
   },
 ];
 
@@ -222,6 +222,32 @@ export const myProjects = [
     ],
   },
   {
+    title: "Portfolio",
+    position: "FullStack Developer",
+    date: "Jan 2025",
+    desc: "Desarrollo de un portafolio personal que muestra mi vida, proyectos y formación académica, con un diseño atractivo que resalta mis habilidades, experiencias y logros de manera organizada y visualmente atractiva.",
+    href: "#",
+    texture: "/textures/project/project6.mp4",
+    isInProgress: false,
+    tags: [
+      {
+        id: 1,
+        name: "React.js",
+        path: ReacIcon,
+      },
+      {
+        id: 2,
+        name: "TailwindCSS",
+        path: TailwindCSSIcon,
+      },
+      {
+        id: 3,
+        name: "JavaScript",
+        path: JSIcon,
+      },
+    ],
+  },
+  {
     title: "Chat",
     position: "Frontend Developer",
     date: "Oct 2024",
@@ -254,32 +280,6 @@ export const myProjects = [
         id: 5,
         name: "MySQL",
         path: MySQLIcon,
-      },
-    ],
-  },
-  {
-    title: "Portfolio",
-    position: "FullStack Developer",
-    date: "Jan 2025",
-    desc: "Desarrollo de un portafolio personal que muestra mi vida, proyectos y formación académica, con un diseño atractivo que resalta mis habilidades, experiencias y logros de manera organizada y visualmente atractiva.",
-    href: "#",
-    texture: "/textures/project/project6.mp4",
-    isInProgress: false,
-    tags: [
-      {
-        id: 1,
-        name: "React.js",
-        path: ReacIcon,
-      },
-      {
-        id: 2,
-        name: "TailwindCSS",
-        path: TailwindCSSIcon,
-      },
-      {
-        id: 3,
-        name: "JavaScript",
-        path: JSIcon,
       },
     ],
   },
@@ -338,7 +338,7 @@ export const studyItems = [
     title: "Ingenieria de Software",
     icon: UMBIcon,
     dateFinish: "Feb 2021",
-    schoolar: "Universidad Manuela Beltran",
+    schoolar: "UMB",
     image: image,
     state: true,
   },

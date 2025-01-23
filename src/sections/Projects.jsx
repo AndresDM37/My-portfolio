@@ -39,7 +39,7 @@ const Projects = () => {
       />
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 lg:gap-2 grid-cols-1 mt-12 gap-5 w-full">
-          <Card className={"h-[420px]"}>
+          <Card className={"h-[420px] sm-custom:h-[450px]"}>
             <div className="flex flex-col gap-2 my-5 p-6">
               <h5 className="bg-gradient-to-r from-emerald-300 to-sky-400  inline-flex gap-2 font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text">
                 {currentProjects.position + " ● " + currentProjects.date}

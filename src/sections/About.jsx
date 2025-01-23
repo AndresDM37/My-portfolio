@@ -40,7 +40,7 @@ const About = () => {
                 className="w-60 mx-auto mt-2 md:mt-0"
               />
             </Card>
-            <Card className={"text-white h-[320px] p-0 md:col-span-3"}>
+            <Card className={"text-white h-[320px] md:col-span-3 sm-custom:h-[360px]"}>
               <CardHeader
                 title={"Mi caja de herramientas"}
                 description={
@@ -59,7 +59,7 @@ const About = () => {
               />
             </Card>
           </div>
-          <Card className={"text-white h-[320px] p-0 flex flex-col"}>
+          <Card className={"text-white h-[320px] p-0 flex flex-col sm-custom:h-[380px]"}>
             <CardHeader
               title={"La vida fuera de la pantalla"}
               description={

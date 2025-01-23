@@ -43,11 +43,11 @@ const Study = () => {
                 {currentStudy.schoolar + " ● " + currentStudy.dateFinish}
               </h5>
             </div>
-            <h3 className="font-serif font-semibold text-3xl text-white">
+            <h3 className="font-serif font-semibold text-3xl text-white sm-custom:text-2xl lg:text-4xl">
               {currentStudy.title}
             </h3>
             {currentStudy.icon && (
-              <div className="absolute top-8 right-8">
+              <div className="absolute top-8 right-8 sm-custom:top-4 sm-custom:right-4">
                 <currentStudy.icon />
               </div>
             )}
@@ -55,14 +55,14 @@ const Study = () => {
             {currentStudy.state ? (
               <div className="flex flex-col items-center justify-center h-[412px] lg:h-[512px] outline outline-2 text-white outline-white/40 font-semibold rounded-lg">
                 <img src={tuercaIcon} alt="rueda cargando" className="size-44 mb-4"/>
-                <p className="text-4xl">Estudio en Progreso 💻</p> 
+                <p className="text-4xl">Estudio en Progreso</p> 
                 {/* hacer que los 3 puntos se muevan */}
               </div>
             ) : (
               <img
                 src={currentStudy.image}
                 alt={`${currentStudy.title} Certificate`}
-                className="rounded-md mt-8 -mb-4 h-[400px] lg:h-[500px] lg:w-[750px] lg:mt-4 lg:ml-24"
+                className="rounded-md mt-8 -mb-4 h-[400px] lg:h-[500px] lg:w-[750px] lg:mt-4 lg:ml-24 sm-custom:w-[500px] sm-custom:h-[300px]"
               />
             )}
           </div>
