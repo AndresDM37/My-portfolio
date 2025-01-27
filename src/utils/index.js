@@ -4,7 +4,7 @@ import JSIcon from "../assets/icons/js.svg";
 import TailwindCSSIcon from "../assets/icons/tailwindcss.svg";
 import TypeScriptIcon from "../assets/icons/typescript.svg";
 import HtmlIcon from "../assets/icons/html.svg";
-import MySQLIcon from "../assets/icons/mysql.svg";
+import NextIcon from "../assets/icons/nextjs.svg";
 import NodeJSIcon from "../assets/icons/node.svg";
 
 import {
@@ -223,7 +223,7 @@ export const myProjects = [
     ],
   },
   {
-    title: "Portfolio",
+    title: "Portafolio",
     position: "FullStack Developer",
     date: "Jan 2025",
     desc: "Desarrollo de un portafolio personal que muestra mi vida, proyectos y formación académica, con un diseño atractivo que resalta mis habilidades, experiencias y logros de manera organizada y visualmente atractiva.",
@@ -249,38 +249,33 @@ export const myProjects = [
     ],
   },
   {
-    title: "Chat",
-    position: "Frontend Developer",
-    date: "Oct 2024",
-    desc: "Development of a real-time chat application using MySQL as the database, Node.js for server logic, and HTML/CSS for the front-end, featuring instant communication through a clean and functional interface, real-time message updates, and a focus on simplicity, performance, and system scalability",
+    title: "Docs",
+    position: "FullStack Developer",
+    date: "Ene 2024",
+    desc: "Proyecto completo que permite la creación y edición colaborativa de documentos en tiempo real. Desarrollado con tecnologías modernas tanto en frontend como backend, incluye manejo de usuarios, sincronización en tiempo real, y una interfaz intuitiva. Diseñado para aprender y aplicar habilidades full-stack en un entorno práctico.",
     href: "",
     texture: "/textures/project/en-progreso.mp4",
     isInProgress: true,
     tags: [
       {
         id: 1,
-        name: "HTML",
-        path: HtmlIcon,
+        name: "React",
+        path: ReacIcon,
       },
       {
         id: 2,
-        name: "CSS",
-        path: CSSIcon,
+        name: "TailwindCSS",
+        path: TailwindCSSIcon,
       },
       {
         id: 3,
-        name: "JavaScript",
-        path: JSIcon,
+        name: "TypeScript",
+        path: TypeScriptIcon,
       },
       {
         id: 4,
-        name: "NodeJS",
-        path: NodeJSIcon,
-      },
-      {
-        id: 5,
-        name: "MySQL",
-        path: MySQLIcon,
+        name: "NextJS",
+        path: NextIcon,
       },
     ],
   },
