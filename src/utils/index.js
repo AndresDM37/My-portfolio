@@ -224,8 +224,8 @@ export const myProjects = [
   },
   {
     title: "Portafolio",
-    position: "FullStack Developer",
-    date: "Jan 2025",
+    position: "FrontEnd Developer",
+    date: "Ene 2025",
     desc: "Desarrollo de un portafolio personal que muestra mi vida, proyectos y formación académica, con un diseño atractivo que resalta mis habilidades, experiencias y logros de manera organizada y visualmente atractiva.",
     href: "#",
     texture: "/textures/project/project6.mp4",
@@ -251,7 +251,7 @@ export const myProjects = [
   {
     title: "Docs",
     position: "FullStack Developer",
-    date: "Ene 2024",
+    date: "Ene 2025",
     desc: "Proyecto completo que permite la creación y edición colaborativa de documentos en tiempo real. Desarrollado con tecnologías modernas tanto en frontend como backend, incluye manejo de usuarios, sincronización en tiempo real, y una interfaz intuitiva. Diseñado para aprender y aplicar habilidades full-stack en un entorno práctico.",
     href: "",
     texture: "/textures/project/en-progreso.mp4",
