@@ -69,7 +69,7 @@ const Projects = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <p>Check Live Site</p>
+                <p>Visitar página</p>
                 <img src={arrowUpIcon} alt="arrow" />
               </a>
             </div>

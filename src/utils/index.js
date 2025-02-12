@@ -5,7 +5,6 @@ import TailwindCSSIcon from "../assets/icons/tailwindcss.svg";
 import TypeScriptIcon from "../assets/icons/typescript.svg";
 import HtmlIcon from "../assets/icons/html.svg";
 import NextIcon from "../assets/icons/nextjs.svg";
-import NodeJSIcon from "../assets/icons/node.svg";
 
 import {
   JavascriptIcon,
@@ -22,6 +21,7 @@ import {
   CiscoIcon,
   NDGIcon,
   ScrumIcon,
+  NextJSIcon,
 } from "../components/Icons";
 
 import image from "../assets/images/certifications/image.png";
@@ -56,6 +56,10 @@ export const toolBoxItems = [
   {
     title: "Node.js",
     iconType: NodeIcon,
+  },
+  {
+    title: "Next.js",
+    iconType: NextJSIcon,
   },
   {
     title: "Figma",
@@ -202,23 +206,33 @@ export const myProjects = [
     ],
   },
   {
-    title: "Paint Window",
-    position: "Frontend Developer",
-    date: "Sept 2024",
-    desc: "Aplicación de dibujo interactiva con herramientas como pincel, borrador, rectángulos y elipses. Incluye selector de color compatible con la API de EyeDropper para elegir colores del lienzo (en navegadores modernos). Ofrece una interfaz intuitiva con botones interactivos para cambiar modos y limpiar el lienzo, animaciones para el texto en pantalla, y manejo preciso del dibujo mediante eventos del ratón.",
-    href: "https://paint-window-andev.netlify.app",
+    title: "Docs",
+    position: "FullStack Developer",
+    date: "Ene 2025",
+    desc: "Proyecto de edición colaborativa en tiempo real, con autenticación mediante Clerk, sincronización con Liveblocks y diseño accesible con Shadcn-UI. Optimiza la colaboración y productividad con una experiencia fluida e intuitiva.",
+    href: "https://andev-docs.vercel.app",
     texture: "/textures/project/project4.mp4",
     isInProgress: false,
     tags: [
       {
         id: 1,
-        name: "HTML",
-        path: HtmlIcon,
+        name: "React",
+        path: ReacIcon,
       },
       {
         id: 2,
-        name: "JavaScript",
-        path: JSIcon,
+        name: "TailwindCSS",
+        path: TailwindCSSIcon,
+      },
+      {
+        id: 3,
+        name: "TypeScript",
+        path: TypeScriptIcon,
+      },
+      {
+        id: 4,
+        name: "NextJS",
+        path: NextIcon,
       },
     ],
   },
@@ -245,37 +259,6 @@ export const myProjects = [
         id: 3,
         name: "JavaScript",
         path: JSIcon,
-      },
-    ],
-  },
-  {
-    title: "Docs",
-    position: "FullStack Developer",
-    date: "Ene 2025",
-    desc: "Proyecto completo que permite la creación y edición colaborativa de documentos en tiempo real. Desarrollado con tecnologías modernas tanto en frontend como backend, incluye manejo de usuarios, sincronización en tiempo real, y una interfaz intuitiva. Diseñado para aprender y aplicar habilidades full-stack en un entorno práctico.",
-    href: "",
-    texture: "/textures/project/en-progreso.mp4",
-    isInProgress: true,
-    tags: [
-      {
-        id: 1,
-        name: "React",
-        path: ReacIcon,
-      },
-      {
-        id: 2,
-        name: "TailwindCSS",
-        path: TailwindCSSIcon,
-      },
-      {
-        id: 3,
-        name: "TypeScript",
-        path: TypeScriptIcon,
-      },
-      {
-        id: 4,
-        name: "NextJS",
-        path: NextIcon,
       },
     ],
   },
