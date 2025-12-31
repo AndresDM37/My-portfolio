@@ -330,3 +330,104 @@ export const studyItems = [
     state: true,
   },
 ];
+
+/**
+ * Datos de Experiencia Laboral
+ * Estructura escalable para agregar más trabajos según se vayan sumando
+ * Cada entrada contiene información completa del rol y logros
+ */
+export const experienceItems = [
+  {
+    company: "Xcargo",
+    position: "Desarrollador Full Stack",
+    startDate: "10/2025",
+    endDate: "Actualmente",
+    isCurrentJob: true,
+    description:
+      "Apoyo en el desarrollo, mantenimiento y mejora de módulos internos de la empresa, contribuyendo a la optimización de procesos en áreas como Talento Humano, Contabilidad y Operaciones. Mi labor se enfoca en mejorar la eficiencia y usabilidad de las herramientas internas.",
+    achievements: [
+      "Desarrollo y soporte de aplicaciones internas orientadas a la gestión administrativa y operativa",
+      "Implementación de mejoras funcionales y corrección de incidencias en sistemas existentes",
+      "Colaboración con equipos de diferentes áreas para identificar requerimientos y proponer soluciones tecnológicas eficientes",
+    ],
+    tags: [
+      {
+        id: 1,
+        name: "React.js",
+        icon: ReactIcon,
+      },
+      {
+        id: 2,
+        name: "Node.js",
+        icon: NodeIcon,
+      },
+      {
+        id: 3,
+        name: "Python",
+        icon: JavascriptIcon,
+      },
+      {
+        id: 4,
+        name: "PostgreSQL",
+        icon: SQLIcon,
+      },
+      {
+        id: 5,
+        name: "Next.js",
+        icon: NextJSIcon,
+      },
+      {
+        id: 6,
+        name: "GitHub",
+        icon: GitHubIcon,
+      },
+      {
+        id: 7,
+        name: "Tailwind CSS",
+        icon: TailwindCSSIcon,
+      },
+    ],
+  },
+  {
+    company: "Cemex",
+    position: "Practicante Profesional - Ingeniero de Software",
+    startDate: "04/2025",
+    endDate: "10/2025",
+    isCurrentJob: false,
+    description:
+      "Apoyé la automatización de operaciones regionales mediante desarrollo de scripts en Visual Basic y Python, optimizando tareas repetitivas y reduciendo tiempos de ejecución. Diseñé y gestioné dashboards en Power BI para análisis de datos, facilitando la toma de decisiones estratégicas. Participé en la creación de aplicaciones y páginas web internas.",
+    achievements: [
+      "Automatización de operaciones regionales con scripts en Visual Basic y Python",
+      "Diseño y gestión de dashboards en Power BI para análisis de datos estratégicos",
+      "Creación de aplicaciones y páginas web internas para mejorar eficiencia operativa",
+      "Optimización de tareas repetitivas reduciendo significativamente tiempos de ejecución",
+    ],
+    tags: [
+      {
+        id: 1,
+        name: "React.js",
+        icon: ReactIcon,
+      },
+      {
+        id: 2,
+        name: "JavaScript",
+        icon: JavascriptIcon,
+      },
+      {
+        id: 3,
+        name: "Python",
+        icon: NodeIcon,
+      },
+      {
+        id: 4,
+        name: "Tailwind CSS",
+        icon: TailwindCSSIcon,
+      },
+      {
+        id: 5,
+        name: "GitHub",
+        icon: GitHubIcon,
+      },
+    ],
+  },
+];
