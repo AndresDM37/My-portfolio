@@ -10,8 +10,6 @@ import arrowRightIcon from "../assets/icons/arrow-right.svg";
 
 import tuercaIcon from "../assets/icons/tuerca.svg";
 
-const studyCount = studyItems.length;
-
 const Study = () => {
   const [selectedStudyIndex, setSelectedStudyIndex] = useState(0);
   const currentStudy = studyItems[selectedStudyIndex];
@@ -19,9 +17,9 @@ const Study = () => {
   const handleNavigation = (direction) => {
     setSelectedStudyIndex((prevIndex) => {
       if (direction === "previous") {
-        return prevIndex === 0 ? studyCount - 1 : prevIndex - 1;
+        return prevIndex === 0 ? studyItems.length - 1 : prevIndex - 1;
       } else {
-        return prevIndex === studyCount - 1 ? 0 : prevIndex + 1;
+        return prevIndex === studyItems.length - 1 ? 0 : prevIndex + 1;
       }
     });
   };
@@ -54,8 +52,12 @@ const Study = () => {
             <hr className="border-t-2 border-white/15" />
             {currentStudy.state ? (
               <div className="flex flex-col items-center justify-center h-[412px] lg:h-[512px] outline outline-2 text-white outline-white/40 font-semibold rounded-lg">
-                <img src={tuercaIcon} alt="rueda cargando" className="size-44 mb-4"/>
-                <p className="text-4xl">Estudio en Progreso</p> 
+                <img
+                  src={tuercaIcon}
+                  alt="rueda cargando"
+                  className="size-44 mb-4"
+                />
+                <p className="text-4xl">Estudio en Progreso</p>
                 {/* hacer que los 3 puntos se muevan */}
               </div>
             ) : (
@@ -73,6 +75,23 @@ const Study = () => {
             >
               <img src={arrowLeftIcon} alt="arrow-left" className="w-4 h-4" />
             </button>
+
+            {/* Indicadores de página */}
+            <div className="flex gap-2 items-center flex-wrap justify-center max-w-[200px]">
+              {studyItems.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setSelectedStudyIndex(index)}
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                    selectedStudyIndex === index
+                      ? "bg-gradient-to-r from-emerald-300 to-sky-400 w-6"
+                      : "bg-white/30 hover:bg-white/50"
+                  }`}
+                  aria-label={`Ir al estudio ${index + 1}`}
+                />
+              ))}
+            </div>
+
             <button
               className="arrow-btn rotate-44 mr-5 z-40"
               onClick={() => handleNavigation("next")}

@@ -1,8 +1,8 @@
-export const TechIcon = ({ component }) => {
+export const TechIcon = ({ component, size = "size-10" }) => {
   const Component = component;
   return (
     <>
-      <div className="size-10 fill-[url(#tech-icon-gradient)]">
+      <div className={`${size} fill-[url(#tech-icon-gradient)]`}>
         <Component />
       </div>
       <svg className="size-0 absolute">

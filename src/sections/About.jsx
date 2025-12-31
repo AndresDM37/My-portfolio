@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Emoji from "../assets/images/emoji2.png";
 import { hobbies } from "../utils";
 import { toolBoxItems } from "../utils";
@@ -12,8 +12,7 @@ import { motion } from "framer-motion";
 import { useRef } from "react";
 
 const About = () => {
-
-  const constraintRef = useRef(null)
+  const constraintRef = useRef(null);
 
   return (
     <section id="About" className="py-20 lg:py-28 lg:mt-1">
@@ -40,7 +39,11 @@ const About = () => {
                 className="w-60 mx-auto mt-2 md:mt-0"
               />
             </Card>
-            <Card className={"text-white h-[320px] md:col-span-3 sm-custom:h-[360px]"}>
+            <Card
+              className={
+                "text-white h-[320px] md:col-span-3 sm-custom:h-[360px]"
+              }
+            >
               <CardHeader
                 title={"Mi caja de herramientas"}
                 description={
@@ -59,7 +62,11 @@ const About = () => {
               />
             </Card>
           </div>
-          <Card className={"text-white h-[320px] p-0 flex flex-col sm-custom:h-[380px]"}>
+          <Card
+            className={
+              "text-white h-[320px] p-0 flex flex-col sm-custom:h-[380px]"
+            }
+          >
             <CardHeader
               title={"La vida fuera de la pantalla"}
               description={
@@ -71,10 +78,12 @@ const About = () => {
               {hobbies.map((hobby) => (
                 <motion.div
                   key={hobby.title}
-                  className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute"
+                  className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute cursor-grab active:cursor-grabbing shadow-lg hover:shadow-xl hover:shadow-emerald-500/30 transition-shadow"
                   style={{ left: hobby.left, top: hobby.top }}
                   drag
                   dragConstraints={constraintRef}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   <span className="font-medium text-gray-950">
                     {hobby.title}
@@ -87,8 +96,21 @@ const About = () => {
           <a
             href="/documents/HV/Ingeniero de Software - FrontEnd Developer.pdf"
             download="/Ingeniero de Software - FrontEnd Developer.pdf"
-            className="px-4 py-2 outline outline-2 outline-white/20 bg-gray-800 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity md:w-1/4 mx-auto text-center"
+            className="px-6 py-3 outline outline-2 outline-white/20 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gradient-to-r hover:from-emerald-300/20 hover:to-sky-400/20 hover:outline-white/40 hover:shadow-lg hover:shadow-emerald-500/20 transition-all duration-300 md:w-1/4 mx-auto text-center flex items-center justify-center gap-2 group"
           >
+            <svg
+              className="w-5 h-5 transition-transform group-hover:-translate-y-0.5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+              />
+            </svg>
             Descarga mi Hoja de Vida
           </a>
         </div>

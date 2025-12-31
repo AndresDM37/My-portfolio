@@ -58,20 +58,26 @@ const Projects = () => {
             <div className="flex items-center justify-between flex-wrap ml-6">
               <div className="flex items-center gap-3">
                 {currentProjects.tags.map((tag, index) => (
-                  <div key={index} className="tech-logo">
+                  <div key={index} className="tech-logo" title={tag.name}>
                     <img src={tag.path} alt={tag.name} />
                   </div>
                 ))}
               </div>
-              <a
-                className="flex items-center gap-2 cursor-pointer z-40 text-white/60 hover:text-white mr-6"
-                href={currentProjects.href}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <p>Visitar página</p>
-                <img src={arrowUpIcon} alt="arrow" />
-              </a>
+              {!currentProjects.isInProgress && (
+                <a
+                  className="flex items-center gap-2 cursor-pointer z-40 text-white/60 hover:text-white transition-all duration-300 mr-6 group"
+                  href={currentProjects.href}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <p className="group-hover:underline">Visitar página</p>
+                  <img
+                    src={arrowUpIcon}
+                    alt="arrow"
+                    className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  />
+                </a>
+              )}
             </div>
             <div className="flex justify-between items-center mt-7">
               <button
@@ -80,6 +86,23 @@ const Projects = () => {
               >
                 <img src={arrowLeftIcon} alt="arrow-left" className="w-4 h-4" />
               </button>
+
+              {/* Indicadores de página */}
+              <div className="flex gap-2 items-center">
+                {myProjects.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setSelectedProjectIndex(index)}
+                    className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                      selectedProjectIndex === index
+                        ? "bg-gradient-to-r from-emerald-300 to-sky-400 w-6"
+                        : "bg-white/30 hover:bg-white/50"
+                    }`}
+                    aria-label={`Ir al proyecto ${index + 1}`}
+                  />
+                ))}
+              </div>
+
               <button
                 className="arrow-btn rotate-44 mr-5 z-40"
                 onClick={() => handleNavigation("next")}

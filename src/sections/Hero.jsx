@@ -82,7 +82,7 @@ const Hero = () => {
             Hola, Me llamo Andrés <span className="waving-hand">👋</span>
           </p>
           <p className="hero_tag text-white/60">
-            JR FrontEnd Developer - Full Stack en Progreso
+            FullStack Developer | Apasionado por crear experiencias web
           </p>
         </div>
         <div className="flex flex-col md:flex-row justify-center items-center gap-4 z-999">
