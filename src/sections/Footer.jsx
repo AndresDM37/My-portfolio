@@ -3,10 +3,6 @@ import arrowUpIcon from "../assets/icons/arrow-up-right.svg";
 
 const footerLinks = [
     {
-        title: 'WhatsApp',
-        href: 'https://w.app/V6dlbn',
-    },
-    {
         title: 'GitHub',
         href: 'https://github.com/AndresDM37',
     },
