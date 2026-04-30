@@ -41,3 +41,5 @@ dist/*
 
 # Agentes
 .agents/
+skills-lock.json
+
