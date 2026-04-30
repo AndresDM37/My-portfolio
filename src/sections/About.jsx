@@ -30,23 +30,13 @@ const About = () => {
               <CardHeader
                 title={"¿Quién soy?"}
                 description={
-                  "Soy Andrés Felipe Marchena Porras, ingeniero de software y desarrollador full-stack con foco en React. Me gusta transformar ideas en productos claros, funcionales y visualmente cuidados."
+                  "Soy Andrés Felipe Marchena Porras, ingeniero de software y desarrollador full-stack. Me gusta transformar ideas en productos claros, funcionales y visualmente cuidados."
                 }
               />
               <div className="px-6 pb-8 md:px-10">
                 <div className="relative mx-auto mt-1 flex aspect-square max-w-[220px] items-center justify-center rounded-full border border-white/10 bg-white/5 shadow-2xl shadow-black/20">
                   <div className="absolute inset-8 rounded-full bg-emerald-300/20 blur-2xl"></div>
                   <img src={Emoji} alt="Andrés en versión ilustrada" className="relative w-48" />
-                </div>
-                <div className="mt-6 grid grid-cols-2 gap-3 text-center text-sm">
-                  <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-3">
-                    <p className="font-semibold text-white">Front limpio</p>
-                    <p className="mt-1 text-xs text-white/50">UI clara</p>
-                  </div>
-                  <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-3">
-                    <p className="font-semibold text-white">Full-stack</p>
-                    <p className="mt-1 text-xs text-white/50">React + APIs</p>
-                  </div>
                 </div>
               </div>
             </Card>

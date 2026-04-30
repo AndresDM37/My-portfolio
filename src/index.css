@@ -56,11 +56,11 @@ body {
   }
 
   .btn-ping {
-    @apply absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-300 opacity-75;
+    @apply absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-60;
   }
 
   .btn-ping_dot {
-    @apply relative inline-flex h-3 w-3 rounded-full bg-emerald-300;
+    @apply relative inline-flex h-3 w-3 rounded-full bg-white shadow-[0_0_18px_rgba(255,255,255,0.9)];
   }
 
   /* hero section */
