@@ -5,100 +5,80 @@ import { StarIcon } from "../components/Icons";
 import emojiImage from "../assets/images/emoji.png";
 import backGround from "../assets/images/grain.jpg";
 
+const floatingStars = [
+  "left-[8%] top-24 size-8 opacity-45",
+  "left-[18%] top-[62%] size-14 opacity-50",
+  "left-[31%] top-36 size-6 opacity-40",
+  "right-[28%] top-20 size-7 opacity-45",
+  "right-[13%] top-44 size-16 opacity-60",
+  "right-[8%] top-[68%] size-9 opacity-40",
+];
+
 const Hero = () => {
   return (
-    <section className="py-32 md:py-14 relative z-0 overflow-x-clip">
+    <section className="relative z-0 min-h-screen overflow-hidden pb-16 pt-28 md:pt-24">
       <div className="absolute inset-0 mask-gradient">
         <div
-          className="absolute inset-0 z-30 opacity-5"
+          className="absolute inset-0 z-0 opacity-5"
           style={{ backgroundImage: `url(${backGround})` }}
         ></div>
-        <div className="size-[610px] hero-ring"></div>
-        <div className="size-[810px] hero-ring"></div>
-        <div className="size-[1010px] hero-ring"></div>
-        <div className="size-[1210px] hero-ring"></div>
-        <div className="size-[1410px] hero-ring"></div>
-        <div className="size-[1610px] hero-ring"></div>
-        <div className="size-[1810px] hero-ring"></div>
-        <div className="size-[2010px] hero-ring"></div>
+        <div className="absolute left-1/2 top-20 h-80 w-80 -translate-x-1/2 rounded-full bg-emerald-300/15 blur-3xl"></div>
+        <div className="absolute right-0 top-1/3 h-72 w-72 rounded-full bg-sky-400/10 blur-3xl"></div>
+        {[620, 860, 1100, 1340, 1580].map((size) => (
+          <div key={size} className="hero-ring" style={{ width: size, height: size }} />
+        ))}
       </div>
-      <div className="absolute size-[40px] opacity-50 top-10 left-10">
-        <StarIcon />
-      </div>
-      <div className="absolute size-[130px] top-3/4 ">
-        <StarIcon />
-      </div>
-      <div className="absolute size-[40px] opacity-55 top-20 left-80">
-        <StarIcon />
-      </div>
-      <div className="absolute size-[30px] opacity-55 top-72 left-1/3">
-        <StarIcon />
-      </div>
-      <div className="absolute size-[130px] top-28 left-3/4">
-        <StarIcon />
-      </div>
-      <div className="absolute size-[25px] opacity-50 top-10 left-[750px]">
-        <StarIcon />
-      </div>
-      <div className="absolute size-[60px] top-80 left-16">
-        <StarIcon />
-      </div>
-      <div className="absolute size-[40px] top-40 left-[800px]">
-        <StarIcon />
-      </div>
-      <div className="absolute size-[25px] opacity-50 top-20 left-[1100px]">
-        <StarIcon />
-      </div>
-      <div className="absolute size-[25px] opacity-50 top-3/4 left-[550px]">
-        <StarIcon />
-      </div>
-      <div className="absolute size-[50px] top-3/4 left-[1100px]">
-        <StarIcon />
-      </div>
-      <div className="absolute size-[30px] opacity-50 top-[600px] left-[1350px]">
-        <StarIcon />
-      </div>
-      <div className="absolute size-[85px] top-[600px] left-[1650px]">
-        <StarIcon />
-      </div>
-      <div className="absolute size-[30px] top-96 left-[1200px]">
-        <StarIcon />
-      </div>
-      <div className="absolute size-[30px] opacity-50 top-[350px] left-[1500px]">
-        <StarIcon />
-      </div>
-      <div className="absolute size-[30px] opacity-50 top-6 left-[1750px]">
-        <StarIcon />
-      </div>
-
-      <div className="flex flex-col justify-center items-center">
-        <div className="flex flex-col items-center py-44 md:py-16 xl:py-40">
-          <img
-            src={emojiImage}
-            alt="Persona saludando"
-            className="size-[200px]"
-          />
-          <p className="font-generalsans text-3xl text-center mt-8 tracking-wide text-white">
-            Hola, Me llamo Andrés <span className="waving-hand">👋</span>
-          </p>
-          <p className="hero_tag text-white/60">
-            FullStack Developer | Apasionado por crear experiencias web
-          </p>
+      {floatingStars.map((className) => (
+        <div key={className} className={`absolute hidden text-sky-200 md:block ${className}`}>
+          <StarIcon />
         </div>
-        <div className="flex flex-col md:flex-row justify-center items-center gap-4 z-999">
-          <a href="#Projects" className="w-fit">
+      ))}
+
+      <div className="container relative z-10 mx-auto flex min-h-[calc(100vh-7rem)] flex-col items-center justify-center">
+        <div className="flex max-w-5xl flex-col items-center text-center">
+          <div className="relative">
+            <div className="absolute inset-4 rounded-full bg-emerald-300/20 blur-2xl"></div>
+            <img
+              src={emojiImage}
+              alt="Andrés saludando"
+              className="relative size-32 rounded-full border border-white/10 bg-white/5 p-2 shadow-2xl shadow-black/30 sm:size-40 md:size-48"
+            />
+          </div>
+          <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white/80 shadow-lg shadow-black/20 backdrop-blur">
+            <span className="h-2 w-2 rounded-full bg-emerald-300 shadow-[0_0_18px_rgba(110,231,183,0.8)]"></span>
+            Disponible para crear productos web
+          </div>
+          <p className="mt-6 text-lg font-semibold tracking-wide text-white/80 sm:text-2xl">
+            Hola, soy Andrés <span className="waving-hand">👋</span>
+          </p>
+          <h1 className="hero_tag mt-4 max-w-5xl text-white">
+            Desarrollo interfaces limpias, rápidas y con experiencias memorables.
+          </h1>
+          <p className="mt-6 max-w-2xl text-base leading-7 text-white/60 sm:text-lg">
+            FullStack Developer enfocado en React, diseño UI cuidado y soluciones
+            web que combinan rendimiento, claridad y detalles interactivos.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3 text-sm text-white/60">
+            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">React</span>
+            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">TailwindCSS</span>
+            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">Three.js</span>
+            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">UX/UI</span>
+          </div>
+        </div>
+        <div className="mt-10 flex w-full flex-col items-center justify-center gap-4 sm:w-auto sm:flex-row">
+          <a href="#Projects" className="w-full sm:w-fit">
             <Button
               isBeam
-              name="Explora mi trabajo 🤩"
-              containerClass="sm:w-fit w-full sm:min-w-96"
+              name="Ver proyectos"
+              containerClass="w-full sm:w-fit sm:min-w-48"
             />
           </a>
 
-          <a href="#Contact" className="w-fit">
+          <a href="#Contact" className="w-full sm:w-fit">
             <Button
-              name="Vamos a trabajar juntos"
-              isBeam
-              containerClass="sm:w-fit w-full sm:min-w-96"
+              name="Hablemos"
+              variant="secondary"
+              containerClass="w-full sm:w-fit sm:min-w-48"
             />
           </a>
         </div>

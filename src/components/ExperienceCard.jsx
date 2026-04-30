@@ -21,32 +21,29 @@ const ExperienceCard = ({
   return (
     <div
       className={twMerge(
-        "bg-gray-800 rounded-3xl relative overflow-hidden after:z-10 after:content-[''] after:absolute after:inset-0 after:outline-2 after:outline after:-outline-offset-2 after:rounded-3xl after:outline-white/20 after:pointer-events-none",
+        "relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.055] shadow-2xl shadow-black/20 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-white/15 hover:bg-white/[0.075] hover:shadow-emerald-500/10 after:pointer-events-none after:absolute after:inset-0 after:z-10 after:rounded-3xl after:bg-gradient-to-br after:from-white/10 after:via-transparent after:to-emerald-300/5 after:content-['']",
         className
       )}
     >
-      {/* Textura grain de fondo */}
       <div
-        className="absolute inset-0 z-30 opacity-5"
+        className="absolute inset-0 z-0 opacity-5"
         style={{ backgroundImage: `url(${backGround})` }}
       ></div>
 
-      {/* Contenido con padding y posición relativa */}
       <div className="relative z-20 p-6">
-        {/* Header con empresa y fechas */}
-        <div className="flex flex-col gap-2 mb-4">
-          <div className="flex items-start justify-between gap-4">
+        <div className="mb-5 flex flex-col gap-3">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
             <div className="flex-1">
-              <h5 className="bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex gap-2 font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text">
+              <h5 className="inline-flex rounded-full border border-emerald-300/20 bg-emerald-300/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-emerald-200">
                 {company}
               </h5>
-              <h3 className="text-2xl sm-custom:text-lg font-serif font-semibold text-white mt-2">
+              <h3 className="mt-4 font-serif text-2xl font-semibold tracking-[-0.03em] text-white sm-custom:text-lg md:text-3xl">
                 {position}
               </h3>
             </div>
             {isCurrentJob && (
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/30">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span className="inline-flex w-fit items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/15 px-3 py-1.5">
+                <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-300"></span>
                 <span className="text-xs font-semibold text-emerald-300">
                   Actual
                 </span>
@@ -54,41 +51,38 @@ const ExperienceCard = ({
             )}
           </div>
 
-          {/* Fechas */}
-          <p className="text-sm text-white/60 font-medium">
+          <p className="text-sm font-medium text-white/55">
             {startDate} {endDate && `- ${endDate}`}
           </p>
         </div>
 
         <hr className="border-t border-white/10 my-4" />
 
-        {/* Descripción */}
         {description && (
-          <p className="text-white/60 text-sm leading-relaxed mb-3">
+          <p className="mb-4 text-sm leading-7 text-white/65">
             {description}
           </p>
         )}
 
-        {/* Logros (si existen) */}
         {achievements && achievements.length > 0 && (
-          <div className="mb-3">
-            <p className="text-xs uppercase font-semibold text-white/60 mb-2">
+          <div className="mb-5">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-white/40">
               Logros
             </p>
-            <ul className="list-disc list-inside space-y-1">
+            <ul className="space-y-2">
               {achievements.map((achievement, index) => (
-                <li key={index} className="text-sm text-white/70 pl-2">
-                  {achievement}
+                <li key={index} className="flex gap-3 text-sm leading-6 text-white/70">
+                  <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-emerald-300"></span>
+                  <span>{achievement}</span>
                 </li>
               ))}
             </ul>
           </div>
         )}
 
-        {/* Tecnologías utilizadas */}
         {tags && tags.length > 0 && (
-          <div className="mt-1">
-            <p className="text-xs uppercase font-semibold text-white/60 mb-2">
+          <div className="mt-1 border-t border-white/10 pt-5">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-white/40">
               Tecnologías
             </p>
             <div className="flex flex-wrap items-center gap-3">
@@ -99,11 +93,10 @@ const ExperienceCard = ({
                   title={tag.name}
                 >
                   {tag.icon && typeof tag.icon === "function" && (
-                    <div className="transition-transform duration-200 hover:scale-110">
+                    <div className="rounded-xl border border-white/10 bg-white/5 p-2 transition-transform duration-200 hover:scale-110 hover:bg-white/10">
                       <TechIcon component={tag.icon} />
                     </div>
                   )}
-                  {/* Tooltip con nombre de tecnología */}
                   <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none z-50">
                     {tag.name}
                   </span>

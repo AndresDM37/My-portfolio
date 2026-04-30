@@ -134,6 +134,33 @@ export const NextJSIcon = ({ color = ""}) => {
   );
 };
 
+export const PythonIcon = ({ color = "" }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 64 64"
+      className={`h-full w-full ${color}`}
+    >
+      <path d="M31.8 4C20.7 4 16 7.4 16 14.8V24h16.6v4H10.9C4.8 28 2 32.3 2 41c0 8.5 3.4 13 9.9 13h7.2v-8.9c0-7.1 4.7-11.1 11.2-11.1h15.5c5 0 8.2-3.6 8.2-8.3V14.8C54 7.5 49.7 4 38.4 4h-6.6zm-9.1 6.8c1.9 0 3.4 1.5 3.4 3.3 0 1.9-1.5 3.4-3.4 3.4s-3.4-1.5-3.4-3.4c0-1.8 1.5-3.3 3.4-3.3z" />
+      <path d="M32.2 60C43.3 60 48 56.6 48 49.2V40H31.4v-4h21.7C59.2 36 62 31.7 62 23c0-8.5-3.4-13-9.9-13h-7.2v8.9c0 7.1-4.7 11.1-11.2 11.1H18.2c-5 0-8.2 3.6-8.2 8.3v10.9C10 56.5 14.3 60 25.6 60h6.6zm9.1-6.8c-1.9 0-3.4-1.5-3.4-3.3 0-1.9 1.5-3.4 3.4-3.4s3.4 1.5 3.4 3.4c0 1.8-1.5 3.3-3.4 3.3z" opacity="0.78" />
+    </svg>
+  );
+};
+
+export const HostingerIcon = ({ color = "" }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 64 64"
+      className={`h-full w-full ${color}`}
+    >
+      <path d="M12 8h11v18h18V8h11v48H41V38H23v18H12V8z" />
+      <path d="M26 17h12v6H26v-6zm0 24h12v6H26v-6z" opacity="0.5" />
+      <path d="M8 56h48v4H8v-4z" opacity="0.35" />
+    </svg>
+  );
+};
+
 export const PlatziIcon = ({ color = "" }) => {
   return (
     <svg
@@ -375,4 +402,6 @@ export default {
   NDGIcon,
   ScrumIcon,
   NextJSIcon,
+  PythonIcon,
+  HostingerIcon,
 };

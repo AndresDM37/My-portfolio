@@ -6,7 +6,7 @@ import reactRefresh from "eslint-plugin-react-refresh";
 import { ReactThreeFiber } from "@react-three/fiber";
 
 export default [
-  { ignores: ["dist"] },
+  { ignores: ["dist", "node_modules", ".agents"] },
   {
     files: ["**/*.{js,jsx}"],
     languageOptions: {
@@ -31,6 +31,7 @@ export default [
       ...react.configs["jsx-runtime"].rules,
       ...reactHooks.configs.recommended.rules,
       "react/jsx-no-target-blank": "off",
+      "react/prop-types": "off",
       "react/no-unknown-property": "off",
       "react-refresh/only-export-components": [
         "warn",

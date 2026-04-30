@@ -5,15 +5,15 @@ const Card = ({ className, children }) => {
   return (
     <div
       className={twMerge(
-        "bg-gray-800 rounded-3xl relative overflow-hidden after:z-10 after:content-[''] after:absolute after:inset-0 after:outline-2 after:outline after:-outline-offset-2 after:rounded-3xl after:outline-white/20 after:pointer-events-none transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10 hover:after:outline-white/30",
+        "group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.055] shadow-2xl shadow-black/20 backdrop-blur after:pointer-events-none after:absolute after:inset-0 after:z-10 after:rounded-3xl after:content-[''] after:bg-gradient-to-br after:from-white/10 after:via-transparent after:to-emerald-300/5 after:opacity-70 transition-all duration-300 hover:-translate-y-1 hover:border-white/15 hover:bg-white/[0.075] hover:shadow-emerald-500/10",
         className
       )}
     >
       <div
-        className="absolute inset-0 z-30 opacity-5"
+        className="absolute inset-0 z-0 opacity-5"
         style={{ backgroundImage: `url(${backGround})` }}
       ></div>
-      {children}
+      <div className="relative z-20">{children}</div>
     </div>
   );
 };

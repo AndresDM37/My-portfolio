@@ -19,7 +19,7 @@ const ToolBoxItems = ({ items, className, itemsWrapper }) => {
               {items.map((item) => (
                 <div
                   key={item.title}
-                  className="inline-flex items-center gap-4 py-2 px-3 outline outline-2 outline-white/10 rounded-lg"
+                  className="inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-2.5 text-white/85 shadow-lg shadow-black/10 backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:border-emerald-300/30 hover:bg-white/[0.07] hover:text-white"
                 >
                   <TechIcon component={item.iconType} />
                   <span className="font-semibold">{item.title}</span>

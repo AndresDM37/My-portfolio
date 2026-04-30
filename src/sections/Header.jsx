@@ -1,30 +1,31 @@
+const navItems = [
+  { label: "Inicio", href: "#" },
+  { label: "Sobre Mí", href: "#About" },
+  { label: "Proyectos", href: "#Projects" },
+  { label: "Experiencia", href: "#Experience" },
+  { label: "Estudios", href: "#Study" },
+];
+
 const Header = () => {
   return (
-    <div className="flex justify-center items-center fixed top-3 w-full z-50">
-      <nav className="flex gap-1 p-0.5 border border-white/15 rounded-full bg-white/10 backdrop-blur sm-custom:flex">
-        <a href="#" className="nav-item">
-          Inicio
-        </a>
-        <a href="#About" className="nav-item">
-          Sobre Mi
-        </a>
-        <a href="#Projects" className="nav-item">
-          Proyectos
-        </a>
-        <a href="#Experience" className="nav-item">
-          Experiencia
-        </a>
-        <a href="#Study" className="nav-item">
-          Estudios
-        </a>
+    <header className="fixed top-3 z-50 flex w-full justify-center px-3">
+      <nav
+        className="flex max-w-[calc(100vw-1.5rem)] items-center gap-1 overflow-x-auto rounded-full border border-white/15 bg-gray-950/65 p-1 shadow-2xl shadow-black/30 backdrop-blur-xl [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        aria-label="Navegación principal"
+      >
+        {navItems.map((item) => (
+          <a key={item.href} href={item.href} className="nav-item whitespace-nowrap">
+            {item.label}
+          </a>
+        ))}
         <a
           href="#Contact"
-          className="nav-item bg-white !text-gray-900 hover:bg-white/70 hover:text-gray-900"
+          className="nav-item whitespace-nowrap bg-white !text-gray-950 shadow-sm shadow-white/10 hover:bg-emerald-200 hover:!text-gray-950"
         >
           Contacto
         </a>
       </nav>
-    </div>
+    </header>
   );
 };
 

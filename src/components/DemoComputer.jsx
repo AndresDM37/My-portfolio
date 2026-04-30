@@ -1,32 +1,45 @@
-import { useRef, useEffect} from "react";
+import { useEffect, useRef } from "react";
+import { useFrame } from "@react-three/fiber";
 import { useGLTF, useVideoTexture } from "@react-three/drei";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-const DemoComputer = (props) => {
+const DemoComputer = ({ texture, ...groupProps }) => {
   const group = useRef();
   const { nodes, materials } = useGLTF("/models/computer.glb");
 
   const txt = useVideoTexture(
-    props.texture ? props.texture : "/textures/project/project1.mp4"
+    texture ? texture : "/textures/project/project1.mp4"
   );
 
   useEffect(() => {
-    if(txt) {
-      txt.flipY = false}
+    if (txt) {
+      txt.flipY = false;
+    }
   }, [txt]);
 
   useGSAP(() => {
+    if (!group.current) return;
+
     gsap.from(group.current.rotation, {
       y: Math.PI / 2,
       duration: 1,
-      ease: "power3.out", 
-    })
+      ease: "power3.out",
+    });
   }, [txt]);
+
+  useFrame(({ clock }) => {
+    if (!group.current) return;
+
+    const elapsed = clock.getElapsedTime();
+    group.current.position.y = Math.sin(elapsed * 1.15) * 0.045;
+    group.current.rotation.y = Math.sin(elapsed * 0.45) * 0.04;
+    group.current.rotation.x = Math.sin(elapsed * 0.35) * 0.012;
+  });
   
 
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group ref={group} {...groupProps} dispose={null}>
       <group name="Scene">
         <mesh
           name="monitor-screen"
