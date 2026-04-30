@@ -22,6 +22,8 @@ import {
   NDGIcon,
   ScrumIcon,
   NextJSIcon,
+  PythonIcon,
+  HostingerIcon,
 } from "../components/Icons";
 
 import image from "../assets/images/certifications/image.png";
@@ -338,6 +340,62 @@ export const studyItems = [
  */
 export const experienceItems = [
   {
+    company: "A360 Asesorías",
+    position: "Jefe de Programación",
+    startDate: "01/2026",
+    endDate: "Actualmente",
+    isCurrentJob: true,
+    description:
+      "Trabajo para una empresa española liderando el desarrollo de aplicaciones internas y soluciones para clientes, coordinando la planificación técnica, implementación de funcionalidades y mejora continua de productos digitales.",
+    achievements: [
+      "Desarrollo de aplicaciones internas para optimizar procesos operativos",
+      "Construcción de soluciones web a medida para clientes",
+      "Coordinación técnica de tareas de programación y entregas",
+    ],
+    tags: [
+      {
+        id: 1,
+        name: "React.js",
+        icon: ReactIcon,
+      },
+      {
+        id: 2,
+        name: "JavaScript",
+        icon: JavascriptIcon,
+      },
+      {
+        id: 3,
+        name: "Next.js",
+        icon: NextJSIcon,
+      },
+      {
+        id: 4,
+        name: "Python",
+        icon: PythonIcon,
+      },
+      {
+        id: 5,
+        name: "Node.js",
+        icon: NodeIcon,
+      },
+      {
+        id: 6,
+        name: "Hostinger VPS",
+        icon: HostingerIcon,
+      },
+      {
+        id: 7,
+        name: "GitHub",
+        icon: GitHubIcon,
+      },
+      {
+        id: 8,
+        name: "Tailwind CSS",
+        icon: TailwindCSSIcon,
+      },
+    ],
+  },
+  {
     company: "Xcargo",
     position: "Desarrollador Full Stack",
     startDate: "10/2025",
@@ -363,26 +421,31 @@ export const experienceItems = [
       },
       {
         id: 3,
-        name: "Python",
+        name: "JavaScript",
         icon: JavascriptIcon,
       },
       {
         id: 4,
+        name: "Python",
+        icon: PythonIcon,
+      },
+      {
+        id: 5,
         name: "PostgreSQL",
         icon: SQLIcon,
       },
       {
-        id: 5,
+        id: 6,
         name: "Next.js",
         icon: NextJSIcon,
       },
       {
-        id: 6,
+        id: 7,
         name: "GitHub",
         icon: GitHubIcon,
       },
       {
-        id: 7,
+        id: 8,
         name: "Tailwind CSS",
         icon: TailwindCSSIcon,
       },
