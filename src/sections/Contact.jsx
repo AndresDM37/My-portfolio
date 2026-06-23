@@ -1,7 +1,13 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
+import FormField from "../components/FormField";
 import arrowUpIcon from "../assets/icons/arrow-up-right.svg";
+
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const TO_EMAIL = import.meta.env.VITE_CONTACT_EMAIL ?? "polimardo2@gmail.com";
 
 const Contact = () => {
   const formRef = useRef();
@@ -9,11 +15,7 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
 
   const handleChange = ({ target: { name, value } }) => {
     setForm({ ...form, [name]: value });
@@ -29,32 +31,26 @@ const Contact = () => {
 
     try {
       await emailjs.send(
-        "service_9dk8ed3",
-        "template_tet7jnz",
+        SERVICE_ID,
+        TEMPLATE_ID,
         {
           from_name: form.name,
           to_name: "Andrés Marchena",
           from_email: form.email,
-          to_email: "polimardo2@gmail.com",
+          to_email: TO_EMAIL,
           message: form.message,
         },
-        "mudUIS_kTp4PzqodA"
+        PUBLIC_KEY
       );
 
       setLoading(false);
       setSuccess(true);
+      setForm({ name: "", email: "", message: "" });
 
-      setForm({
-        name: "",
-        email: "",
-        message: "",
-      });
-
-      // Resetear mensaje de éxito después de 5 segundos
       setTimeout(() => setSuccess(false), 5000);
-    } catch (error) {
+    } catch (err) {
       setLoading(false);
-      console.log(error);
+      console.error(err);
       setError(true);
     }
   };
@@ -67,7 +63,7 @@ const Contact = () => {
           <div className="absolute -bottom-28 left-10 h-72 w-72 rounded-full bg-gray-950/10 blur-3xl"></div>
           <div className="relative z-10 grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
             <div>
-              <p className="mb-4 inline-flex rounded-full border border-gray-950/10 bg-white/35 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-gray-900 backdrop-blur">
+              <p className="mb-4 inline-flex rounded-full border border-gray-950/10 bg-white/35 px-3 py-1.5 text-label text-gray-900 backdrop-blur">
                 Contacto
               </p>
               <h2 className="head-text">¡Vamos a hablar!</h2>
@@ -88,44 +84,36 @@ const Contact = () => {
             <form
               ref={formRef}
               onSubmit={handleSubmit}
+              aria-busy={loading}
               className="relative z-10 flex flex-col space-y-5 rounded-3xl border border-gray-950/10 bg-gray-950/90 p-5 text-white shadow-2xl shadow-gray-950/20 backdrop-blur md:p-6"
             >
-              <label className="space-y-3">
-                <span className="text-sm font-semibold text-white/80">Nombre completo</span>
-                <input
-                  type="text"
-                  name="name"
-                  value={form.name}
-                  onChange={handleChange}
-                  required
-                  className="field-input"
-                  placeholder="Andrés Marchena"
-                />
-              </label>
-              <label className="space-y-3">
-                <span className="text-sm font-semibold text-white/80">Correo electrónico</span>
-                <input
-                  type="email"
-                  name="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  required
-                  className="field-input"
-                  placeholder="ejemplo@gmail.com"
-                />
-              </label>
-              <label className="space-y-3">
-                <span className="text-sm font-semibold text-white/80">Mensaje</span>
-                <textarea
-                  name="message"
-                  value={form.message}
-                  onChange={handleChange}
-                  rows={5}
-                  required
-                  className="field-input resize-none"
-                  placeholder="Hola, me gustaría que hablemos sobre..."
-                />
-              </label>
+              <FormField
+                label="Nombre completo"
+                name="name"
+                value={form.name}
+                onChange={handleChange}
+                required
+                placeholder="Andrés Marchena"
+              />
+              <FormField
+                label="Correo electrónico"
+                name="email"
+                type="email"
+                value={form.email}
+                onChange={handleChange}
+                required
+                placeholder="ejemplo@gmail.com"
+              />
+              <FormField
+                label="Mensaje"
+                name="message"
+                value={form.message}
+                onChange={handleChange}
+                required
+                multiline
+                rows={5}
+                placeholder="Hola, me gustaría que hablemos sobre..."
+              />
 
               <button
                 className={`field-btn z-50 rounded-full transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 ${
@@ -140,10 +128,7 @@ const Contact = () => {
               >
                 {loading ? (
                   <>
-                    <svg
-                      className="mr-2 h-5 w-5 animate-spin"
-                      viewBox="0 0 24 24"
-                    >
+                    <svg className="mr-2 h-5 w-5 animate-spin" viewBox="0 0 24 24" aria-hidden="true">
                       <circle
                         className="opacity-25"
                         cx="12"
@@ -168,6 +153,7 @@ const Contact = () => {
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
+                      aria-hidden="true"
                     >
                       <path
                         strokeLinecap="round"
@@ -186,16 +172,18 @@ const Contact = () => {
                 )}
               </button>
 
-              {success && (
-                <p className="rounded-2xl border border-emerald-300/20 bg-emerald-300/10 px-4 py-3 text-center text-sm font-semibold text-emerald-100">
-                  Gracias por contactarme. Te responderé pronto.
-                </p>
-              )}
-              {error && (
-                <p className="rounded-2xl border border-red-300/20 bg-red-400/10 px-4 py-3 text-center text-sm font-semibold text-red-100">
-                  No se pudo enviar el mensaje. Inténtalo nuevamente en unos minutos.
-                </p>
-              )}
+              <div aria-live="polite" role="status">
+                {success && (
+                  <p className="rounded-2xl border border-emerald-300/20 bg-emerald-300/10 px-4 py-3 text-center text-sm font-semibold text-emerald-100">
+                    Gracias por contactarme. Te responderé pronto.
+                  </p>
+                )}
+                {error && (
+                  <p className="rounded-2xl border border-red-300/20 bg-red-400/10 px-4 py-3 text-center text-sm font-semibold text-red-100">
+                    No se pudo enviar el mensaje. Inténtalo nuevamente en unos minutos.
+                  </p>
+                )}
+              </div>
             </form>
           </div>
         </div>

@@ -39,6 +39,11 @@ vite.config.js
 
 dist/*
 
+# Variables de entorno (no commitear secretos; ver .env.example)
+.env
+.env.*
+!.env.example
+
 # Agentes
 .agents/
 skills-lock.json

@@ -10,17 +10,22 @@ import Footer from "./sections/Footer";
 
 const App = () => {
   return (
-    <main className="bg-gray-900 flex flex-col">
+    <>
+      <a href="#contenido" className="skip-link">
+        Saltar al contenido
+      </a>
       <Header />
-      <Hero />
-      <About />
-      <Tape />
-      <Projects />
-      <Experience />
-      <Study />
-      <Contact />
+      <main id="contenido" className="flex flex-col">
+        <Hero />
+        <About />
+        <Tape />
+        <Projects />
+        <Experience />
+        <Study />
+        <Contact />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 };
 

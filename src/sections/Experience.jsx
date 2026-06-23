@@ -1,29 +1,42 @@
 import { useState } from "react";
 import SectionHeader from "../components/SectionHeader";
 import ExperienceCard from "../components/ExperienceCard";
+import FilterButtons from "../components/FilterButtons";
+import StatCard from "../components/StatCard";
 import { experienceItems } from "../utils";
 
+const filterOptions = [
+  { value: "all", label: "Todas" },
+  { value: "current", label: "Actualmente" },
+  { value: "past", label: "Anteriores" },
+];
+
 /**
- * Sección de Experiencia Laboral
- * Muestra el historial de trabajos de forma clara y escalable
- * Incluye filtrado por estado (todos, actuales, pasados) para mejor UX
+ * Sección de Experiencia Laboral.
+ * Lista filtrable por estado (todas/actuales/anteriores) y resumen de stats.
  */
 const Experience = () => {
   const [filterStatus, setFilterStatus] = useState("all");
 
-  // Filtrar experiencias según el estado seleccionado
   const filteredExperiences = experienceItems.filter((item) => {
     if (filterStatus === "current") return item.isCurrentJob;
     if (filterStatus === "past") return !item.isCurrentJob;
     return true;
   });
 
-  // Ordenar por fecha más reciente primero
+  // Ordenar por fecha de inicio más reciente primero.
   const sortedExperiences = [...filteredExperiences].sort((a, b) => {
     const dateA = new Date(a.startDate.split("/").reverse().join("-"));
     const dateB = new Date(b.startDate.split("/").reverse().join("-"));
     return dateB - dateA;
   });
+
+  const stats = [
+    { value: experienceItems.length, label: "Experiencias" },
+    { value: experienceItems.filter((e) => e.isCurrentJob).length, label: "Actual" },
+    { value: new Set(experienceItems.map((e) => e.company)).size, label: "Empresas" },
+    { value: "+3", label: "Años" },
+  ];
 
   return (
     <section id="Experience" className="section-spacing">
@@ -36,69 +49,32 @@ const Experience = () => {
           }
         />
 
-        <div className="mt-10 flex flex-wrap justify-center gap-3">
-          {[
-            { value: "all", label: "Todas" },
-            { value: "current", label: "Actualmente" },
-            { value: "past", label: "Anteriores" },
-          ].map((filter) => (
-            <button
-              key={filter.value}
-              onClick={() => setFilterStatus(filter.value)}
-              className={`rounded-full border px-5 py-2 text-sm font-semibold transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 ${
-                filterStatus === filter.value
-                  ? "border-emerald-300/40 bg-emerald-300/15 text-emerald-200 shadow-lg shadow-emerald-500/10"
-                  : "border-white/10 bg-white/5 text-white/60 hover:bg-white/10 hover:text-white/85"
-              }`}
-            >
-              {filter.label}
-            </button>
-          ))}
+        <div className="mt-10">
+          <FilterButtons
+            options={filterOptions}
+            value={filterStatus}
+            onChange={setFilterStatus}
+            ariaLabel="Filtrar experiencias por estado"
+          />
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-1">
+        <div className="mt-12 grid grid-cols-1 gap-6">
           {sortedExperiences.length > 0 ? (
             sortedExperiences.map((experience, index) => (
-              <ExperienceCard
-                key={`${experience.company}-${index}`}
-                {...experience}
-              />
+              <ExperienceCard key={`${experience.company}-${index}`} {...experience} />
             ))
           ) : (
-            <div className="col-span-full rounded-3xl border border-white/10 bg-white/5 py-12 text-center">
-              <p className="text-lg text-white/60">
-                No hay experiencias para mostrar
-              </p>
+            <div className="col-span-full rounded-3xl border border-line/10 bg-surface/5 py-12 text-center">
+              <p className="text-lg text-fg/60">No hay experiencias para mostrar</p>
             </div>
           )}
         </div>
 
         {experienceItems.length > 0 && (
-          <div className="mt-16 grid grid-cols-2 gap-4 border-t border-white/10 pt-8 md:grid-cols-4">
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-5 text-center">
-              <p className="bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-3xl font-bold text-transparent">
-                {experienceItems.length}
-              </p>
-              <p className="mt-1 text-sm text-white/60">Experiencias</p>
-            </div>
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-5 text-center">
-              <p className="bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-3xl font-bold text-transparent">
-                {experienceItems.filter((e) => e.isCurrentJob).length}
-              </p>
-              <p className="mt-1 text-sm text-white/60">Actual</p>
-            </div>
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-5 text-center">
-              <p className="bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-3xl font-bold text-transparent">
-                {new Set(experienceItems.map((e) => e.company)).size}
-              </p>
-              <p className="mt-1 text-sm text-white/60">Empresas</p>
-            </div>
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-5 text-center">
-              <p className="bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-3xl font-bold text-transparent">
-                +3
-              </p>
-              <p className="mt-1 text-sm text-white/60">Años</p>
-            </div>
+          <div className="mt-16 grid grid-cols-2 gap-4 border-t border-line/10 pt-8 md:grid-cols-4">
+            {stats.map((stat) => (
+              <StatCard key={stat.label} value={stat.value} label={stat.label} />
+            ))}
           </div>
         )}
       </div>

@@ -1,4 +1,3 @@
-"use client";
 import Emoji from "../assets/images/emoji2.png";
 import { hobbies } from "../utils";
 import { toolBoxItems } from "../utils";
@@ -10,9 +9,11 @@ import ToolBoxItems from "../components/ToolBoxItems";
 
 import { motion } from "framer-motion";
 import { useRef } from "react";
+import { useReducedMotion } from "../hooks/useReducedMotion";
 
 const About = () => {
   const constraintRef = useRef(null);
+  const reducedMotion = useReducedMotion();
 
   return (
     <section id="About" className="section-spacing lg:mt-1">
@@ -26,7 +27,7 @@ const About = () => {
         />
         <div className="mt-14 flex flex-col gap-8 md:mt-20">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-5">
-            <Card className={"text-white md:col-span-2"}>
+            <Card className={"text-fg md:col-span-2"}>
               <CardHeader
                 title={"¿Quién soy?"}
                 description={
@@ -34,17 +35,18 @@ const About = () => {
                 }
               />
               <div className="px-6 pb-8 md:px-10">
-                <div className="relative mx-auto mt-1 flex aspect-square max-w-[220px] items-center justify-center rounded-full border border-white/10 bg-white/5 shadow-2xl shadow-black/20">
+                <div className="relative mx-auto mt-1 flex aspect-square max-w-[220px] items-center justify-center rounded-full border border-line/10 bg-surface/5 shadow-2xl shadow-black/20">
                   <div className="absolute inset-8 rounded-full bg-emerald-300/20 blur-2xl"></div>
-                  <img src={Emoji} alt="Andrés en versión ilustrada" className="relative w-48" />
+                  <img
+                    src={Emoji}
+                    alt="Andrés en versión ilustrada"
+                    loading="lazy"
+                    className="relative w-48"
+                  />
                 </div>
               </div>
             </Card>
-            <Card
-              className={
-                "min-h-[360px] text-white md:col-span-3"
-              }
-            >
+            <Card className={"min-h-[360px] text-fg md:col-span-3"}>
               <CardHeader
                 title={"Mi caja de herramientas"}
                 description={
@@ -63,18 +65,14 @@ const About = () => {
                   itemsWrapper="animate-move-right [animation-duration:24s]"
                 />
               </div>
-              <div className="mx-6 mb-6 grid grid-cols-1 gap-3 border-t border-white/10 pt-6 text-sm text-white/65 sm:grid-cols-3 md:mx-10">
-                <p><span className="font-semibold text-white">Diseño:</span> UI limpia y usable</p>
-                <p><span className="font-semibold text-white">Código:</span> componentes mantenibles</p>
-                <p><span className="font-semibold text-white">Entrega:</span> rendimiento y detalle</p>
+              <div className="mx-6 mb-6 grid grid-cols-1 gap-3 border-t border-line/10 pt-6 text-sm text-fg/65 sm:grid-cols-3 md:mx-10">
+                <p><span className="font-semibold text-fg">Diseño:</span> UI limpia y usable</p>
+                <p><span className="font-semibold text-fg">Código:</span> componentes mantenibles</p>
+                <p><span className="font-semibold text-fg">Entrega:</span> rendimiento y detalle</p>
               </div>
             </Card>
           </div>
-          <Card
-            className={
-              "flex min-h-[360px] flex-col p-0 text-white md:min-h-[390px]"
-            }
-          >
+          <Card className={"flex min-h-[360px] flex-col p-0 text-fg md:min-h-[390px]"}>
             <CardHeader
               title={"La vida fuera de la pantalla"}
               description={
@@ -82,35 +80,39 @@ const About = () => {
               }
               className={"px-6 py-6"}
             />
-            <div className="relative z-30 min-h-[210px] flex-1 overflow-hidden px-4 pb-6" ref={constraintRef}>
+            <ul
+              className="relative z-30 min-h-[210px] flex-1 list-none overflow-hidden px-4 pb-6"
+              ref={constraintRef}
+            >
               {hobbies.map((hobby) => (
-                <motion.div
+                <motion.li
                   key={hobby.title}
-                  className="absolute inline-flex cursor-grab items-center gap-2 rounded-full border border-white/10 bg-gradient-to-r from-emerald-300 to-sky-400 px-5 py-2 shadow-lg shadow-emerald-500/10 transition-shadow hover:shadow-xl hover:shadow-emerald-500/25 active:cursor-grabbing"
+                  className="absolute inline-flex cursor-grab items-center gap-2 rounded-full border border-white/10 bg-gradient-to-r from-emerald-300 to-sky-400 px-5 py-2 shadow-lg shadow-emerald-500/10 transition-shadow hover:shadow-xl hover:shadow-emerald-500/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent active:cursor-grabbing"
                   style={{ left: hobby.left, top: hobby.top }}
-                  drag
+                  tabIndex={0}
+                  aria-label={`Pasatiempo: ${hobby.title}`}
+                  drag={!reducedMotion}
                   dragConstraints={constraintRef}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  whileHover={reducedMotion ? undefined : { scale: 1.05 }}
+                  whileTap={reducedMotion ? undefined : { scale: 0.95 }}
                 >
-                  <span className="font-medium text-gray-950">
-                    {hobby.title}
-                  </span>
-                  <span>{hobby.emoji}</span>
-                </motion.div>
+                  <span className="font-medium text-gray-950">{hobby.title}</span>
+                  <span aria-hidden="true">{hobby.emoji}</span>
+                </motion.li>
               ))}
-            </div>
+            </ul>
           </Card>
           <a
             href="/documents/HV/Ingeniero de Software - FrontEnd Developer.pdf"
             download="/Ingeniero de Software - FrontEnd Developer.pdf"
-            className="group mx-auto flex w-full items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-center font-semibold text-white shadow-lg shadow-black/20 transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-300/30 hover:bg-white/10 hover:shadow-emerald-500/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 sm:w-fit"
+            className="link-ghost group mx-auto w-full px-6 py-3 text-center font-semibold sm:w-fit"
           >
             <svg
-              className="w-5 h-5 transition-transform group-hover:-translate-y-0.5"
+              className="h-5 w-5 transition-transform group-hover:-translate-y-0.5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              aria-hidden="true"
             >
               <path
                 strokeLinecap="round"

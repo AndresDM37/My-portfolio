@@ -1,12 +1,37 @@
 <!doctype html>
-<html lang="en">
+<html lang="es" class="dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/assets/images/emoji2.png" />
+    <link rel="icon" type="image/png" href="/src/assets/images/emoji2.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mi Portafolio</title>
+    <meta
+      name="description"
+      content="Portafolio de Andrés Marchena — ingeniero de software y desarrollador full-stack. Interfaces limpias, rápidas y con experiencias memorables."
+    />
+    <meta name="theme-color" content="#030712" />
+
+    <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin />
+
+    <title>Andrés Marchena · Desarrollador Full-Stack</title>
+
+    <!-- Evita el flash de tema incorrecto: aplica la preferencia antes del render. -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var theme =
+            stored ||
+            (window.matchMedia("(prefers-color-scheme: light)").matches
+              ? "light"
+              : "dark");
+          var root = document.documentElement;
+          root.classList.remove("light", "dark");
+          root.classList.add(theme);
+        } catch (e) {}
+      })();
+    </script>
   </head>
-  <body class="bg-gray-900">
+  <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

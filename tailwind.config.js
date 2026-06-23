@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
@@ -14,6 +15,20 @@ export default {
         "move-right": "move-right 1s linear infinite",
       },
       colors: {
+        // Tokens semánticos (theme-aware vía variables CSS en index.css).
+        // Usan el patrón rgb(var(--x) / <alpha-value>) para soportar el
+        // modificador de opacidad de Tailwind: p.ej. bg-surface/[0.06].
+        // 'ground' (no 'base') para no colisionar con la utilidad text-base.
+        ground: "rgb(var(--c-base) / <alpha-value>)",
+        surface: "rgb(var(--c-surface) / <alpha-value>)",
+        fg: "rgb(var(--c-fg) / <alpha-value>)",
+        line: "rgb(var(--c-line) / <alpha-value>)",
+        accent: {
+          DEFAULT: "rgb(var(--c-accent) / <alpha-value>)",
+          soft: "rgb(var(--c-accent-2) / <alpha-value>)",
+          deep: "rgb(var(--c-accent-3) / <alpha-value>)",
+        },
+        // Escalas heredadas (modelo 3D, inputs sobre paneles oscuros).
         black: {
           DEFAULT: "#000",
           100: "#010103",

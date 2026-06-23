@@ -14,9 +14,14 @@ const floatingStars = [
   "right-[8%] top-[68%] size-9 opacity-40",
 ];
 
+const skills = ["React", "TailwindCSS", "Three.js", "UX/UI"];
+
 const Hero = () => {
   return (
-    <section className="relative z-0 min-h-screen overflow-hidden pb-16 pt-28 md:pt-24">
+    <section
+      id="inicio"
+      className="relative z-0 min-h-screen overflow-hidden pb-16 pt-28 md:pt-24"
+    >
       <div className="absolute inset-0 mask-gradient">
         <div
           className="absolute inset-0 z-0 opacity-5"
@@ -29,7 +34,11 @@ const Hero = () => {
         ))}
       </div>
       {floatingStars.map((className) => (
-        <div key={className} className={`absolute hidden text-sky-200 md:block ${className}`}>
+        <div
+          key={className}
+          aria-hidden="true"
+          className={`absolute hidden text-sky-300/70 md:block ${className}`}
+        >
           <StarIcon />
         </div>
       ))}
@@ -41,29 +50,35 @@ const Hero = () => {
             <img
               src={emojiImage}
               alt="Andrés saludando"
-              className="relative size-32 rounded-full border border-white/10 bg-white/5 p-2 shadow-2xl shadow-black/30 sm:size-40 md:size-48"
+              width="192"
+              height="192"
+              className="relative size-32 rounded-full border border-line/10 bg-surface/5 p-2 shadow-2xl shadow-black/30 sm:size-40 md:size-48"
             />
           </div>
-          <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white/80 shadow-lg shadow-black/20 backdrop-blur">
-            <span className="h-2 w-2 rounded-full bg-emerald-300 shadow-[0_0_18px_rgba(110,231,183,0.8)]"></span>
+          <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-line/10 bg-surface/5 px-4 py-2 text-sm font-semibold text-fg/80 shadow-lg shadow-black/20 backdrop-blur">
+            <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_18px_rgba(110,231,183,0.8)]"></span>
             Disponible para crear productos web
           </div>
-          <p className="mt-6 text-lg font-semibold tracking-wide text-white/80 sm:text-2xl">
+          <p className="mt-6 text-lg font-semibold tracking-wide text-fg/80 sm:text-2xl">
             Hola, soy Andrés <span className="waving-hand">👋</span>
           </p>
-          <h1 className="hero_tag mt-4 max-w-5xl text-white">
+          <h1 className="hero_tag mt-4 max-w-5xl text-fg">
             Desarrollo interfaces limpias, rápidas y con experiencias memorables.
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-7 text-white/60 sm:text-lg">
+          <p className="mt-6 max-w-2xl text-base leading-7 text-fg/60 sm:text-lg">
             FullStack Developer enfocado en React, diseño UI cuidado y soluciones
             web que combinan rendimiento, claridad y detalles interactivos.
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3 text-sm text-white/60">
-            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">React</span>
-            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">TailwindCSS</span>
-            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">Three.js</span>
-            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">UX/UI</span>
-          </div>
+          <ul className="mt-8 flex flex-wrap justify-center gap-3 text-sm text-fg/60">
+            {skills.map((skill) => (
+              <li
+                key={skill}
+                className="rounded-full border border-line/10 bg-surface/5 px-3 py-1.5"
+              >
+                {skill}
+              </li>
+            ))}
+          </ul>
         </div>
         <div className="mt-10 flex w-full flex-col items-center justify-center gap-4 sm:w-auto sm:flex-row">
           <a href="#Projects" className="w-full sm:w-fit">

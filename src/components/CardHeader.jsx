@@ -9,11 +9,9 @@ const CardHeader = ({ title, description, className }) => {
           <div className="size-8 text-emerald-300 drop-shadow-[0_0_18px_rgba(110,231,183,0.3)]">
             <StarIcon color="text-emerald-300" />
           </div>
-          <h3 className="font-serif text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">
-            {title}
-          </h3>
+          <h3 className="text-h3 text-fg">{title}</h3>
         </div>
-        <p className="mt-3 max-w-2xl text-sm leading-6 text-white/65">{description}</p>
+        <p className="mt-3 max-w-2xl text-sm leading-6 text-fg/65">{description}</p>
       </div>
     </>
   );
