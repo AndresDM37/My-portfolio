@@ -31,11 +31,29 @@ const Experience = () => {
     return dateB - dateA;
   });
 
+  // Años de experiencia desde el inicio del primer trabajo, autoactualizable.
+  const earliestStart = experienceItems.reduce((earliest, item) => {
+    const date = new Date(item.startDate.split("/").reverse().join("-"));
+    return date < earliest ? date : earliest;
+  }, new Date());
+  const monthsOfExperience = Math.max(
+    0,
+    (Date.now() - earliestStart) / (1000 * 60 * 60 * 24 * 30.44)
+  );
+  const yearsOfExperience = Math.floor(monthsOfExperience / 12);
+  const experienceStat =
+    yearsOfExperience >= 1
+      ? {
+          value: `+${yearsOfExperience}`,
+          label: yearsOfExperience === 1 ? "Año" : "Años",
+        }
+      : { value: `${Math.round(monthsOfExperience)}`, label: "Meses" };
+
   const stats = [
     { value: experienceItems.length, label: "Experiencias" },
     { value: experienceItems.filter((e) => e.isCurrentJob).length, label: "Actual" },
     { value: new Set(experienceItems.map((e) => e.company)).size, label: "Empresas" },
-    { value: "+3", label: "Años" },
+    { value: experienceStat.value, label: experienceStat.label },
   ];
 
   return (
