@@ -32,7 +32,7 @@ const Study = () => {
             <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <p className="pill-accent">{currentStudy.schoolar}</p>
-                <h3 className="mt-5 text-h2 text-fg sm-custom:text-2xl">
+                <h3 className="mt-5 text-2xl text-fg md:text-h2">
                   {currentStudy.title}
                 </h3>
                 <p className="mt-3 text-sm font-medium text-fg/55">

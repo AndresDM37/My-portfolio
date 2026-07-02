@@ -9,7 +9,7 @@ import DemoComputer from "./DemoComputer";
  * Solo el lienzo 3D (sin marco). Se carga de forma diferida desde
  * ProjectPreview cuando la sección entra en el viewport.
  */
-const ProjectPreviewCanvas = ({ texture }) => {
+const ProjectPreviewCanvas = ({ texture, image, pendingLabel }) => {
   return (
     <Canvas
       camera={{ position: [0, 0, 7], fov: 42 }}
@@ -23,7 +23,11 @@ const ProjectPreviewCanvas = ({ texture }) => {
       <Center>
         <Suspense fallback={<CanvasLoader />}>
           <group scale={1.85} position={[-0.3, -3.3, 0]} rotation={[0, -0.1, 0]}>
-            <DemoComputer texture={texture} />
+            <DemoComputer
+              texture={texture}
+              image={image}
+              pendingLabel={pendingLabel}
+            />
           </group>
         </Suspense>
       </Center>

@@ -26,26 +26,49 @@ const LoadingFallback = () => (
   </div>
 );
 
-const ProjectPreview = ({ texture }) => {
+const ProjectPreview = ({ texture, image, pendingLabel }) => {
   const reducedMotion = useReducedMotion();
   const [ref, inView] = useInView({ rootMargin: "250px" });
 
   // Con movimiento reducido se evita el render 3D animado: se ofrece el
-  // video del proyecto reproducible a voluntad del usuario.
+  // video del proyecto reproducible a voluntad del usuario, o su imagen.
   if (reducedMotion) {
     return (
       <div ref={ref}>
-        <Shell caption="Vista previa del proyecto (reproduce el video)">
-          <video
-            src={texture}
-            muted
-            loop
-            playsInline
-            controls
-            preload="metadata"
-            className="h-full w-full object-cover"
-          />
-        </Shell>
+        {pendingLabel ? (
+          <Shell caption="Demo en preparación">
+            <div className="flex h-full flex-col items-center justify-center gap-4 px-6 text-center">
+              <p className="gradient-brand bg-clip-text text-4xl font-bold text-transparent">
+                {pendingLabel}
+              </p>
+              <p className="text-sm text-fg/55">Demo en camino…</p>
+              <div className="h-1.5 w-40 overflow-hidden rounded-full bg-surface/10">
+                <div className="gradient-brand h-full w-1/3 rounded-full"></div>
+              </div>
+            </div>
+          </Shell>
+        ) : image ? (
+          <Shell caption="Vista previa del proyecto">
+            <img
+              src={image}
+              alt="Vista previa del proyecto"
+              loading="lazy"
+              className="h-full w-full object-cover"
+            />
+          </Shell>
+        ) : (
+          <Shell caption="Vista previa del proyecto (reproduce el video)">
+            <video
+              src={texture}
+              muted
+              loop
+              playsInline
+              controls
+              preload="metadata"
+              className="h-full w-full object-cover"
+            />
+          </Shell>
+        )}
       </div>
     );
   }
@@ -55,7 +78,11 @@ const ProjectPreview = ({ texture }) => {
       <Shell caption="Preview interactivo del proyecto seleccionado">
         {inView ? (
           <Suspense fallback={<LoadingFallback />}>
-            <ProjectPreviewCanvas texture={texture} />
+            <ProjectPreviewCanvas
+              texture={texture}
+              image={image}
+              pendingLabel={pendingLabel}
+            />
           </Suspense>
         ) : (
           <LoadingFallback />

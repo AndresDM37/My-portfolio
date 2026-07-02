@@ -60,7 +60,10 @@ const Hero = () => {
             Disponible para crear productos web
           </div>
           <p className="mt-6 text-lg font-semibold tracking-wide text-fg/80 sm:text-2xl">
-            Hola, soy Andrés <span className="waving-hand">👋</span>
+            Hola, soy{" "}
+            <span className="gradient-brand bg-clip-text font-bold text-transparent">
+              Andrés
+            </span>
           </p>
           <h1 className="hero_tag mt-4 max-w-5xl text-fg">
             Desarrollo interfaces limpias, rápidas y con experiencias memorables.

@@ -7,9 +7,6 @@ export default {
       fontFamily: {
         generalsans: ["General Sans", "sans-serif"],
       },
-      screens: {
-        "sm-custom": { min: "410px", max: "768px" },
-      },
       animation: {
         "move-left": "move-left 1s linear infinite",
         "move-right": "move-right 1s linear infinite",

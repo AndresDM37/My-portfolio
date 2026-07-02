@@ -35,7 +35,7 @@ const ExperienceCard = ({
           <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
             <div className="flex-1">
               <p className="pill-accent">{company}</p>
-              <h3 className="mt-4 text-h3 text-fg sm-custom:text-lg">{position}</h3>
+              <h3 className="mt-4 text-lg text-fg md:text-h3">{position}</h3>
             </div>
             {isCurrentJob && (
               <span className="inline-flex w-fit items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/15 px-3 py-1.5">
@@ -85,7 +85,7 @@ const ExperienceCard = ({
                       <TechIcon component={tag.icon} />
                     </div>
                   )}
-                  <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none z-50">
+                  <span className="absolute bottom-full left-1/2 mb-2 -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none z-50">
                     {tag.name}
                   </span>
                 </div>

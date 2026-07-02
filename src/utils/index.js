@@ -5,6 +5,9 @@ import TailwindCSSIcon from "../assets/icons/tailwindcss.svg";
 import TypeScriptIcon from "../assets/icons/typescript.svg";
 import HtmlIcon from "../assets/icons/html.svg";
 import NextIcon from "../assets/icons/nextjs.svg";
+import PythonSVGIcon from "../assets/icons/python.svg";
+import PostgreSQLIcon from "../assets/icons/postgresql.svg";
+import SupabaseIcon from "../assets/icons/supabase.svg";
 
 import {
   JavascriptIcon,
@@ -75,6 +78,10 @@ export const toolBoxItems = [
     title: "Jira",
     iconType: JiraIcon,
   },
+  {
+    title: "Hostinger VPS",
+    iconType: HostingerIcon,
+  },
 ];
 
 export const hobbies = [
@@ -105,7 +112,7 @@ export const hobbies = [
   {
     title: "VideoJuegos",
     emoji: "🎮",
-    left: "72%",
+    left: "60%",
     top: "21%",
   },
   {
@@ -123,64 +130,12 @@ export const hobbies = [
   {
     title: "Peliculas",
     emoji: "🎥",
-    left: "65%",
+    left: "55%",
     top: "55%",
   },
 ];
 
 export const myProjects = [
-  {
-    title: "E-commerce",
-    position: "Frontend Developer",
-    date: "Nov 2024",
-    desc: "Desarrollo de un carrito de la compra interactivo utilizando React, con productos obtenidos dinámicamente de una API para garantizar un catálogo siempre actualizado, permitiendo a los usuarios añadir, eliminar y gestionar las cantidades de productos en el carrito, con las mejores prácticas implementadas para la gestión del estado y la interacción API para mejorar la eficiencia y la experiencia del usuario.",
-    href: "https://shopping-cart-with-react-andev.netlify.app",
-    texture: "/textures/project/project1.mp4",
-    isInProgress: false,
-    tags: [
-      {
-        id: 1,
-        name: "React.js",
-        path: ReacIcon,
-      },
-      {
-        id: 2,
-        name: "CSS",
-        path: CSSIcon,
-      },
-      {
-        id: 3,
-        name: "JavaScript",
-        path: JSIcon,
-      },
-    ],
-  },
-  {
-    title: "JavaScript Quiz",
-    position: "Frontend Developer",
-    date: "Oct 2024",
-    desc: "Desarrollo de un quiz interactivo sobre JavaScript, utilizando React y TypeScript. La aplicación presenta preguntas sobre distintos conceptos de JavaScript, permitiendo a los usuarios responder y recibir retroalimentación en tiempo real.",
-    href: "https://quiz-of-javascript.netlify.app",
-    texture: "/textures/project/project2.mp4",
-    isInProgress: false,
-    tags: [
-      {
-        id: 1,
-        name: "React.js",
-        path: ReacIcon,
-      },
-      {
-        id: 2,
-        name: "CSS",
-        path: CSSIcon,
-      },
-      {
-        id: 3,
-        name: "TypeScript",
-        path: TypeScriptIcon,
-      },
-    ],
-  },
   {
     title: "Clon MonkeyType",
     position: "Frontend Developer",
@@ -261,6 +216,163 @@ export const myProjects = [
         id: 3,
         name: "JavaScript",
         path: JSIcon,
+      },
+    ],
+  },
+  {
+    title: "Plásticos y Desechables",
+    position: "Fullstack Developer",
+    company: "Freelance",
+    date: "Jul 2025",
+    desc: "Sistema de facturación desarrollado como freelance para un negocio de plásticos y desechables. Permite gestionar productos y emitir facturas de forma ágil. Construido con React 19, TypeScript y Tailwind CSS 4, desplegado en Vercel.",
+    href: "https://plasticosydesechables.vercel.app",
+    image: "/images/projects/plasticos.png",
+    isInProgress: false,
+    tags: [
+      {
+        id: 1,
+        name: "React.js",
+        path: ReacIcon,
+      },
+      {
+        id: 2,
+        name: "TypeScript",
+        path: TypeScriptIcon,
+      },
+      {
+        id: 3,
+        name: "TailwindCSS",
+        path: TailwindCSSIcon,
+      },
+    ],
+  },
+  {
+    title: "BioLogistica",
+    position: "Fullstack Developer",
+    company: "A360 Asesorías",
+    date: "Ene 2026",
+    desc: "Sistema de gestión logística desarrollado para A360 Asesorías, con backend en FastAPI + PostgreSQL y frontend en React con Tailwind CSS. Incluye migraciones con Alembic, despliegue con Docker y CI/CD con GitHub Actions hacia una VPS.",
+    href: "https://biologistica.a360soft.tech/",
+    image: "/images/projects/biologistica.png",
+    isInProgress: false,
+    tags: [
+      {
+        id: 1,
+        name: "React.js",
+        path: ReacIcon,
+      },
+      {
+        id: 2,
+        name: "TailwindCSS",
+        path: TailwindCSSIcon,
+      },
+      {
+        id: 3,
+        name: "Python",
+        path: PythonSVGIcon,
+      },
+      {
+        id: 4,
+        name: "PostgreSQL",
+        path: PostgreSQLIcon,
+      },
+    ],
+  },
+  {
+    title: "FINANDEV",
+    position: "Fullstack Developer",
+    date: "Mar 2026",
+    desc: "Aplicación de finanzas personales con React 19, TypeScript y Supabase. Importa automáticamente los movimientos bancarios leyendo correos (Bancolombia, Nu, Nequi) mediante la API de Gmail y Edge Functions de Supabase.",
+    href: "https://finandev-three.vercel.app/",
+    texture: "/textures/project/finandev.mp4",
+    // Animación procedural mientras no exista el video: al grabarlo,
+    // colocar el .mp4 y eliminar este flag.
+    previewPending: true,
+    isInProgress: false,
+    tags: [
+      {
+        id: 1,
+        name: "React.js",
+        path: ReacIcon,
+      },
+      {
+        id: 2,
+        name: "TypeScript",
+        path: TypeScriptIcon,
+      },
+      {
+        id: 3,
+        name: "TailwindCSS",
+        path: TailwindCSSIcon,
+      },
+      {
+        id: 4,
+        name: "Supabase",
+        path: SupabaseIcon,
+      },
+    ],
+  },
+  {
+    title: "PUETTRADE",
+    position: "Fullstack Developer",
+    company: "A360 Asesorías",
+    date: "Mar 2026",
+    desc: "Plataforma de trading construida sobre la API de IG Labs, desarrollada en A360 Asesorías. Backend en FastAPI con autenticación y datos de mercado en tiempo real; frontend en Next.js 16 con charts de velas y dashboard de trading.",
+    href: "https://puettrade.a360soft.tech/",
+    image: "/images/projects/puettrade.png",
+    isInProgress: false,
+    tags: [
+      {
+        id: 1,
+        name: "NextJS",
+        path: NextIcon,
+      },
+      {
+        id: 2,
+        name: "TypeScript",
+        path: TypeScriptIcon,
+      },
+      {
+        id: 3,
+        name: "Python",
+        path: PythonSVGIcon,
+      },
+      {
+        id: 4,
+        name: "PostgreSQL",
+        path: PostgreSQLIcon,
+      },
+    ],
+  },
+  {
+    title: "A360 Software",
+    position: "Fullstack Developer",
+    company: "A360 Asesorías",
+    date: "Mar 2026",
+    desc: "Plataforma de gestión empresarial de A360 Asesorías. Monorepo con backend FastAPI y frontend Next.js con Drizzle ORM, desplegado con Docker, GHCR y GitHub Actions en una VPS.",
+    href: "https://gestion.a360soft.tech/login",
+    image: "/images/projects/a360.png",
+    isInProgress: false,
+    tags: [
+      {
+        id: 1,
+        name: "NextJS",
+        path: NextIcon,
+      },
+      {
+        id: 2,
+        name: "TypeScript",
+        path: TypeScriptIcon,
+      },
+      {
+        id: 3,
+        name: "Python",
+        path: PythonSVGIcon,
+      },
+      {
+        id: 4,
+        name: "PostgreSQL",
+        path: PostgreSQLIcon,
       },
     ],
   },
@@ -351,6 +463,7 @@ export const experienceItems = [
       "Desarrollo de aplicaciones internas para optimizar procesos operativos",
       "Construcción de soluciones web a medida para clientes",
       "Coordinación técnica de tareas de programación y entregas",
+      "Despliegue y administración de aplicaciones en VPS de Hostinger con Docker, GHCR y CI/CD con GitHub Actions",
     ],
     tags: [
       {

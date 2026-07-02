@@ -1,20 +1,19 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
+import { CanvasTexture, SRGBColorSpace } from "three";
 import { useFrame } from "@react-three/fiber";
-import { useGLTF, useVideoTexture } from "@react-three/drei";
+import { useGLTF, useTexture, useVideoTexture } from "@react-three/drei";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-const DemoComputer = ({ texture, ...groupProps }) => {
+const DemoComputerModel = ({ txt, ...groupProps }) => {
   const group = useRef();
   const { nodes, materials } = useGLTF("/models/computer.glb");
-
-  const txt = useVideoTexture(
-    texture ? texture : "/textures/project/project1.mp4"
-  );
 
   useEffect(() => {
     if (txt) {
       txt.flipY = false;
+      txt.colorSpace = SRGBColorSpace;
+      txt.needsUpdate = true;
     }
   }, [txt]);
 
@@ -1027,6 +1026,111 @@ const DemoComputer = ({ texture, ...groupProps }) => {
     </group>
   );
 };
+
+// Los hooks no pueden llamarse condicionalmente, así que la carga de
+// textura de video vs imagen se separa en componentes wrapper.
+const DemoComputerVideo = ({ texture, ...groupProps }) => {
+  const txt = useVideoTexture(texture);
+  return <DemoComputerModel txt={txt} {...groupProps} />;
+};
+
+const DemoComputerImage = ({ image, ...groupProps }) => {
+  const txt = useTexture(image);
+  return <DemoComputerModel txt={txt} {...groupProps} />;
+};
+
+// Placeholder animado "demo en camino": se dibuja en un canvas 2D que se usa
+// como textura de la pantalla, sin necesidad de un archivo de video.
+const drawPendingFrame = (canvas, t, label) => {
+  const ctx = canvas.getContext("2d");
+  const { width: w, height: h } = canvas;
+
+  ctx.fillStyle = "#030712";
+  ctx.fillRect(0, 0, w, h);
+
+  const blob = (x, y, r, color) => {
+    const g = ctx.createRadialGradient(x, y, 0, x, y, r);
+    g.addColorStop(0, color);
+    g.addColorStop(1, "rgba(3, 7, 18, 0)");
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, w, h);
+  };
+  blob(
+    w * (0.28 + Math.sin(t * 0.5) * 0.12),
+    h * (0.3 + Math.cos(t * 0.4) * 0.1),
+    w * 0.45,
+    "rgba(52, 211, 153, 0.22)"
+  );
+  blob(
+    w * (0.74 + Math.cos(t * 0.45) * 0.12),
+    h * (0.66 + Math.sin(t * 0.35) * 0.1),
+    w * 0.5,
+    "rgba(14, 165, 233, 0.22)"
+  );
+
+  ctx.textAlign = "center";
+  ctx.fillStyle = "#f9fafb";
+  ctx.font = "700 78px 'General Sans', sans-serif";
+  ctx.fillText(label, w / 2, h * 0.44);
+
+  const dots = ".".repeat(1 + (Math.floor(t * 1.5) % 3));
+  ctx.fillStyle = "rgba(249, 250, 251, 0.55)";
+  ctx.font = "500 34px 'General Sans', sans-serif";
+  ctx.fillText(`Demo en camino${dots}`, w / 2, h * 0.56);
+
+  const barW = w * 0.42;
+  const barH = 10;
+  const barX = (w - barW) / 2;
+  const barY = h * 0.66;
+  ctx.fillStyle = "rgba(249, 250, 251, 0.12)";
+  ctx.beginPath();
+  ctx.roundRect(barX, barY, barW, barH, barH / 2);
+  ctx.fill();
+
+  const segW = barW * 0.35;
+  const travel = barW + segW;
+  const segX = barX - segW + ((t * 220) % travel);
+  ctx.save();
+  ctx.beginPath();
+  ctx.roundRect(barX, barY, barW, barH, barH / 2);
+  ctx.clip();
+  const segGrad = ctx.createLinearGradient(segX, 0, segX + segW, 0);
+  segGrad.addColorStop(0, "#34d399");
+  segGrad.addColorStop(1, "#0ea5e9");
+  ctx.fillStyle = segGrad;
+  ctx.fillRect(segX, barY, segW, barH);
+  ctx.restore();
+};
+
+const DemoComputerPending = ({ label, ...groupProps }) => {
+  const { canvas, txt } = useMemo(() => {
+    const canvas = document.createElement("canvas");
+    canvas.width = 1024;
+    canvas.height = 576;
+    const txt = new CanvasTexture(canvas);
+    txt.colorSpace = SRGBColorSpace;
+    return { canvas, txt };
+  }, []);
+
+  useFrame(({ clock }) => {
+    drawPendingFrame(canvas, clock.getElapsedTime(), label);
+    txt.needsUpdate = true;
+  });
+
+  return <DemoComputerModel txt={txt} {...groupProps} />;
+};
+
+const DemoComputer = ({ texture, image, pendingLabel, ...groupProps }) =>
+  pendingLabel ? (
+    <DemoComputerPending label={pendingLabel} {...groupProps} />
+  ) : image ? (
+    <DemoComputerImage image={image} {...groupProps} />
+  ) : (
+    <DemoComputerVideo
+      texture={texture ?? "/textures/project/en-progreso.mp4"}
+      {...groupProps}
+    />
+  );
 
 useGLTF.preload("/models/computer.glb");
 

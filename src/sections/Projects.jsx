@@ -32,9 +32,11 @@ const Projects = () => {
           <Card className={"min-h-[460px]"}>
             <div className="flex h-full flex-col p-6 md:p-8">
               <div className="flex items-center justify-between gap-4">
-                <p className="pill-accent">{currentProject.position}</p>
+                <p className="pill-accent whitespace-nowrap">
+                  {currentProject.position}
+                </p>
                 <span
-                  className="pill text-fg/55"
+                  className="pill flex-none whitespace-nowrap text-fg/55"
                   aria-live="polite"
                   aria-atomic="true"
                 >
@@ -43,7 +45,10 @@ const Projects = () => {
               </div>
 
               <div className="mt-8">
-                <p className="text-sm font-semibold text-accent-soft">{currentProject.date}</p>
+                <p className="text-sm font-semibold text-accent-soft">
+                  {currentProject.date}
+                  {currentProject.company ? ` · ${currentProject.company}` : ""}
+                </p>
                 <h3 className="mt-3 text-h2 text-fg">{currentProject.title}</h3>
                 {currentProject.isInProgress ? (
                   <p className="mt-5 rounded-2xl border border-accent-soft/30 bg-accent-soft/10 p-4 text-base font-semibold leading-7 text-accent-soft">
@@ -96,7 +101,13 @@ const Projects = () => {
             </div>
           </Card>
 
-          <ProjectPreview texture={currentProject.texture} />
+          <ProjectPreview
+            texture={currentProject.texture}
+            image={currentProject.image}
+            pendingLabel={
+              currentProject.previewPending ? currentProject.title : undefined
+            }
+          />
         </div>
       </div>
     </section>
