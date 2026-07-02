@@ -103,8 +103,8 @@ const About = () => {
             </ul>
           </Card>
           <a
-            href="/documents/HV/Ingeniero de Software - FrontEnd Developer.pdf"
-            download="/Ingeniero de Software - FrontEnd Developer.pdf"
+            href="/documents/HV/Ingeniero de Software - FullStack Developer.pdf"
+            download="Ingeniero de Software - FullStack Developer.pdf"
             className="link-ghost group mx-auto w-full px-6 py-3 text-center font-semibold sm:w-fit"
           >
             <svg
